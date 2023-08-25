@@ -20,7 +20,7 @@ const jsUser = {
 // console.log(jsUser[mySymbol]);//way to access Symbol values from object
 
 jsUser.name = 'SurajMourya'; //You change values of object this way
-// Object.freeze(jsUser); //This method is used when you don't want to change the values of Object
+// Object.freeze(jsUser); //This method is used when you don't want to change the values of Object or no one can change the values
 jsUser.name = "MouryaSuraj"
 // console.log(jsUser);
 // console.log(Object.isFrozen(jsUser));
@@ -33,7 +33,7 @@ jsUser.greetings = function(){        //Functions in Objects
 
 
 jsUser.greetings2 = function(){
-    console.log(`Hello Js User, ${this.name}`);//This Property is used to refer the current Object
+    console.log(`Hello Js User, ${this.name}`);//'this' Property is used to refer the current Object
 }
 // console.log(jsUser.greetings2());
 
