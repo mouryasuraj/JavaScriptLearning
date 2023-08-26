@@ -54,7 +54,7 @@
 // }
 // console.log(addTwo(3,4));
 
-// Consice body syntax, Implicit return
+// Concise body syntax, Implicit return
 // const addTwo = (num1, num2) => num1 + num2;
 // const addTwo = (num1, num2) => (num1 + num2);
 
