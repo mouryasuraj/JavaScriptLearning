@@ -54,10 +54,11 @@
 // }
 // console.log(addTwo(3,4));
 
-// Implicit return
+// Consice body syntax, Implicit return
 // const addTwo = (num1, num2) => num1 + num2;
 // const addTwo = (num1, num2) => (num1 + num2);
-// Expilcit return
+
+// block body syntax, Expilcit return
 //  const addTwo = (num1, num2) => { 
 //     return num1 + num2
 // };
@@ -133,7 +134,39 @@ function getThis() {
   
 //   Only for demonstration — you should not mutate built-in prototypes
   Number.prototype.getThis = getThis;
-  console.log(typeof (1).getThis()); // "number"
-  console.log(getThis() === globalThis); // true
+//   console.log(typeof (1).getThis()); // "number"
+//   console.log(getThis() === globalThis); // true
 
+
+
+// arrow functions Syntax
+
+// () => expression
+
+// param => expression
+
+// (param) => expression
+
+// (param1, paramN) => expression
+
+// () => {
+//   statements
+// }
+
+// param => {
+//   statements
+// }
+
+// (param1, paramN) => {
+//   statements
+// }
   
+
+// Parameters in Arrow function
+//Rest parameter, destructuring and default parameter are supported and always required parameters
+// (a, b, ...r) => expression
+// (a = 400, b = 20, c) => expression
+// ([a, b] = [10, 20]) => expression
+// ({ a, b } = { a: 10, b: 20 }) => expression
+
+// Arrow functions can be async by prefixing the expression with the async keyword.
