@@ -4,9 +4,9 @@
 //     console.log("Hello");
 // }
 // showResult;//Refenrce of showResult. It will not execute
-// showResult();//if we put paraentheis then it will call the function
+// showResult();//if we put paraentheis then only it will call the function
 // let result = showResult(); //
-// console.log(result); //Undefined: Beacuse there is no return value in showResult function
+// console.log(result); //Undefined: Beacuse there is no return value of showResult function
 
 
 // function showResult(){
@@ -35,6 +35,7 @@
 //     return `${username} just logged in`
 // }
 
+// console.log(loggedIN('suraj'));
 
 // we can pass the default parameter value username = 'User beacuse when argument is not passed then it will use default value. If we pass the argument then default value will override by argumemt
 // function loggedIN(username = "User"){
@@ -43,8 +44,8 @@
 //     }
 //     return `${username} just logged in`
 // }
-// console.log(loggedIN());//Return UNdefined just logged in beacuse we have not any argument
-// console.log(loggedIN('Suraj'));//Return Suraj just logged in beacuse we have pass the argument
+// console.log(loggedIN());//Return UNdefined just logged in beacuse we didn't pass any argument
+// console.log(loggedIN('Suraj'));//Return Suraj just logged in beacuse we pass the argument
 
 
 // function calculateCartPrice(num1){
@@ -80,11 +81,11 @@ function show(anyObj){
 
 
 // pass array as a parameter in function
-let arr = [200,300,500,600]
+// let arr = [200,300,500,600]
 
-function show(anyArr){
-    console.log(anyArr[2]);
-}
+// function show(anyArr){
+//     console.log(anyArr[2]);
+// }
 
-show(arr)
-show([1,2,3,4])// we can directly pass array at the time of function calling;
+// show(arr)
+// show([1,2,3,4])// we can directly pass array at the time of function calling;

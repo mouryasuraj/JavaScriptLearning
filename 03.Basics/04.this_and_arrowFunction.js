@@ -26,7 +26,7 @@
 // }
 // chai();
 // function chai(){
-//     let name = 'suraj'
+//   let name = 'suraj'
 //     console.log(this.name);//It will return undefined values because this. will only access object
 // }
 // chai();
@@ -58,6 +58,9 @@
 // const addTwo = (num1, num2) => num1 + num2;
 // const addTwo = (num1, num2) => (num1 + num2);
 
+// const sum = () => 'suraj';
+// console.log(sum());
+
 // block body syntax, Expilcit return
 //  const addTwo = (num1, num2) => { 
 //     return num1 + num2
@@ -67,17 +70,20 @@
 
 // console.log(addTwo(3,4));
 
-// if we want to out object in arrow function then we have wrap object in parathesis
+// if we want to put object in arrow function then we have wrap object in parathesis
 // const show = () =>{username:'suraj'}//undefined
 // const show = () =>({username:'suraj'})//username:'suraj'
 // console.log(show());
+
+// const sf = () =>({name:'shiv', lt:'mourya'})
+// console.log(sf().lt);
 
 
 
 // this example
 
 // function getThis() {
-//     return this;
+//     console.log(this);
 //   }
   
 // const obj1 = { 
@@ -116,7 +122,7 @@
 function getThis() {
     return this;
   }
-  
+
   // Only for demonstration — you should not mutate built-in prototypes
 //   Number.prototype.getThis = getThis;
 //   console.log(typeof (1).getThis()); // "object"
@@ -124,6 +130,7 @@ function getThis() {
   
 //   console.log(getThis());
 //   console.log(globalThis);
+
 
 
 // Use Strict

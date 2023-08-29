@@ -35,14 +35,14 @@ console.log(typeof num);
 
 
 // const bigNumber = 45465454564646n;
-// console.log(typeof bigNumber);
+// console.log(typeof bigNumber); // bigint
 
 
 // #Non primitive or reference type
 
 // Array, Objects, Functions
 
-// const heors = ["shaktiman", "naagraj", "doga"]
+// const heors = ["shaktiman", "naagraj", "doga", 44, false, 1.05]
 // const obj = {
 //     name: "suraj",
 //     age: 22

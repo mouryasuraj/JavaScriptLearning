@@ -1,12 +1,15 @@
 // Array Methods
+
+const myArr = [10,5,2,8,12,15];
+
 myArr.push(6); //it will add the element to the end of the array
 myArr.pop();//It will remove the last element from the array
 myArr.unshift(9); //it will add the element at the starting of the array
 myArr.shift(); //it will add the element at the end of the array
-// console.log(myArr.includes(0));//true
-// console.log(myArr.indexOf(0));//0
+// console.log(myArr.includes(0));//false
+// console.log(myArr.indexOf(0));//10
 
-const newArr = myArr.join();// Adds all the elements of an array into a string, separated by the specified separator string.If parameter is empty then it will take default value for separation ','.
+const newArr = myArr.join('-');// Adds all the elements of an array into a string, separated by the specified separator string.If parameter is empty then it will take default value for separation ','.
 
 // console.log(myArr);
 // console.log(newArr);
@@ -35,6 +38,7 @@ const another_arr1 = another_arr.flat(Infinity) //This method returns a new arra
 
 
 // console.log(Array.isArray('Suraj'))//false
+// console.log(Array.isArray(['Suraj']))//false
 // console.log(Array.from('Suraj'))//['S','u','r','a','j']
 // console.log(Array.from({name:'Suraj'}))//Interesting. It will return an empty array because it did not know whow to make array key or value
 let score1 = 100;
@@ -44,10 +48,12 @@ let score3 = 300;
 
 // Fill Mehtod in Array
 let arr = [4, 5, 6, 7]
-// console.log(arr.fill(2));
-// console.log(arr.fill(2, 1));
-// console.log(arr.fill(2, 2, 4));
-// console.log(arr.fill(4, -3, -2)); // [4, 2, 3]
+// console.log(arr);
+// console.log(arr.fill(2)); //2222
+// console.log(arr);
+// console.log(arr.fill(2, 1)); //4222
+// console.log(arr.fill(2, 2, 4)); //4522
+// console.log(arr.fill(4, -3, -2)); // [4, 4, 6, 7]
 
 // let arr1 = Array(3).fill({})
 // arr1[0].first = 'hi1';

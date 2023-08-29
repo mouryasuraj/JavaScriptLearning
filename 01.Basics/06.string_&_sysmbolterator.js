@@ -7,8 +7,8 @@ const repocount = 50;
 
 // another way to declare string
 const anotherWay = new String('Suraj')
-// console.log(anotherWay);//It will give an object
-// console.log(anotherWay[0]); //Output = S
+console.log(anotherWay);//It will give an object
+console.log(anotherWay['2']); //Output = S
 // console.log(anotherWay.__proto__); // return object
 // console.log(anotherWay.length); //Length is a property of String
 // console.log(anotherWay.toUpperCase()); // SURAJ
@@ -22,10 +22,12 @@ const anotherWay = new String('Suraj')
 // console.log(spaceStr);
 // console.log(spaceStr.trim());
 // console.log(name.replace('-', ' '));
-// console.log(name.includes('ura'));
+// console.log(name.includes('ura')); //true
 
-// const dashstr = 'Suraj-Mourya-is-a-good-man';
-// console.log(dashstr.split('-'));//It will give array
+const dashstr = 'Suraj-Mourya-is-a-good-man';
+console.log(dashstr.split('-'));//It will give array
+console.log(dashstr.split('-')[0]);//Suraj
+
 // console.log("Shiv".charAt(2));
 
 

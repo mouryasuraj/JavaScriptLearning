@@ -19,7 +19,7 @@ const jsUser = {
 // console.log(jsUser['name']);//Another and Prefered way to access values from object
 // console.log(jsUser[mySymbol]);//way to access Symbol values from object
 
-jsUser.name = 'SurajMourya'; //You change values of object this way
+jsUser.name = 'SurajMourya'; //You can change values of object this way
 // Object.freeze(jsUser); //This method is used when you don't want to change the values of Object or no one can change the values
 jsUser.name = "MouryaSuraj"
 // console.log(jsUser);

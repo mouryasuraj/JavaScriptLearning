@@ -3,7 +3,7 @@
 
 // isFinite
 // let score = 0 / 1
-// console.log(Number.isFinite(score));
+// console.log(Number.isFinite(score)); //true
 // // isInteger
 // function fits(x, y) {
 //     if (Number.isInteger(y / x)) {
@@ -35,10 +35,10 @@ let val = 45
 // console.log(Math.abs('-5')); //5
 // console.log(Math.abs('-Infinity')); //Infinity
 
-// console.log(Math.ceil(45.96));
-// console.log(Math.floor(45.56));
-// console.log(Math.max(45, 46, 47, 48, 49));
-// console.log(Math.min(45, 46, 47, 48, 49));
+// console.log(Math.ceil(45.96)); ///46
+// console.log(Math.floor(45.56)); ///45
+// console.log(Math.max(45, 46, 47, 48, 49));  //49
+// console.log(Math.min(45, 46, 47, 48, 49));  //45
 // console.log(Math.pow(7,2));
 
 

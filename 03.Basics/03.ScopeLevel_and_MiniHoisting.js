@@ -5,7 +5,7 @@
 //         console.log(username);
 //     }
 
-//     // console.log(website);//we cannot access child variable into parent because website variable is defined in function two and we cannot access its variable outside of the function. This called as Closures.
+//     // console.log(website);//we cannot access child variable into parent because  variable 'website' is defined in function two() and we cannot access its variable outside of the function. This called as Closures.
 
 //     two()
 // }

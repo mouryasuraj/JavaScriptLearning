@@ -19,9 +19,9 @@ let createMyDAte1 = new Date(2023, 1, 2, 5, 3)
 // console.log(createMyDAte1.toLocaleString());
 
 let myTimeStamp = Date.now()
-// console.log(myTimeStamp);
-// console.log(createMyDAte1.getTime());
-// console.log(Math.floor(Date.now()/1000));
+console.log(myTimeStamp);
+console.log(createMyDAte1.getTime());
+console.log(Math.floor(Date.now()/1000));
 
 let newDate = new Date();
 // console.log(newDate);

@@ -35,7 +35,7 @@ link:https://www.freecodecamp.org/news/how-javascript-works-behind-the-scene-jav
 
 Execution 
 
-Everthing Happens in Global Exection Context, So first It will create Global Exection Context. In Global Exectuon Context Two are there: 
+Everthing Happens in Global Exection Context, So first It will create Global Exection Context. In Global Exectuon Context Two phase are there: 
 1.Memory Creation Phase 
 2. Code Execution Phase
 
@@ -43,6 +43,7 @@ Global Exection Context
 
 1.Memory Creation Phase: In this phase javascript runs through the program and allocate memory to all the variables and functions
 
+// Code for examples
 1.var n=2;
 2.function sqaure(num){
 3.    let ans= num * num;
@@ -53,8 +54,8 @@ Global Exection Context
 
 
 Lets take an example of above code
-1.n:undefined    //In memeory creation phase it will allocate memory and assigned undefined to varialbes
-2.sqaure:{...}  //In case of functions it literally stores whole code or function definition.
+1.n:undefined    //In memeory creation phase it will allocate memory and assigned undefined to variables
+2.sqaure:{...}  //In the case of functions it literally stores whole code or function definition.
 5.sqaure2:undefined
 6.sqaure4:undefined
 
@@ -64,7 +65,7 @@ Lets take an example of above code
 
 now, value of n=2, It will replaced the value of undefined to 2
 1.n:2
-then it will move to line 5 that sqaure2 because nothing is there to execute from line 2 to line 4.
+then it will move to line 5 that is sqaure2. because nothing is there to execute from line 2 to line 4.
 sqaure2:sqaure(2) //here function sqaure(2) is invoked
 Here, Interesting things happen that if function is invoked then javascript will again create  execution context for function in Code executin phase and again it will go through memmory and code execution process
 
@@ -92,7 +93,7 @@ Note: After returning the value the whole execution context for that function wi
 5.square2:4
 then it will move to next line which is line no 6
 
-6. sqaure4:sqaure(4) //NOw again here function sqaure(4) is invoked.Again JavaScript create global execution context for function in Code executin phase and again it will go through memmory and code execution process.
+6. sqaure4:sqaure(4) //NOw again here function sqaure(4) is invoked.Again JavaScript create global execution context for function in Code executin phase and again it will go through memmory creation and code execution phase.
 
 ans = num * num  //Here argument is passed 4, so we can directly take argument num = 4
 ans: 4 * 4  
