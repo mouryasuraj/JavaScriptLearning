@@ -1,6 +1,6 @@
 // Array Methods
 
-const myArr = [10,5,2,8,12,15];
+const myArr = [10, 5, 2, 8, 12, 15];
 
 myArr.push(6); //it will add the element to the end of the array
 myArr.pop();//It will remove the last element from the array
@@ -35,6 +35,7 @@ let all_heros = marvel_heros.concat(dc_heros) //concat method is used to combine
 const another_arr = [1, 2, 3, [4, 5, 6], 7, 8, [9, 10, [4, 5]]];
 const another_arr1 = another_arr.flat(Infinity) //This method returns a new array. It will concatenate all sub arrays into an array
 // console.log(another_arr1);
+console.log(another_arr.reverse());
 
 
 // console.log(Array.isArray('Suraj'))//false
@@ -66,3 +67,56 @@ const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present']
 const result = words.filter((words => words.length > 6))
 // console.log(words);
 // console.log(result);
+
+// function filteredArray(arr, elem) {
+//     let newArr = [];
+//     // Only change code below this line
+//     for(let i=0; i<arr.length; i++){
+//       for(let j=0; j<arr[i].length; j++){
+//         if(arr[i][j] === elem){
+//           arr.splice(i, 1)
+//         }
+//       }
+//       newArr = [...arr];
+//     }
+//     // Only change code above this line
+//     return newArr;
+//   }
+
+//   console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+
+const a = [[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]];
+// for(let i = 0; i<a.length; i++){
+//     for(let j = 0; j<a[i].length; j++){
+//         if(a[i][j] == 3){
+//             a.splice(i,1)
+//         }
+//     }
+// }
+
+
+
+
+
+
+
+// // function reverseString(str) {
+// //   let revStr = '';
+// //   for(let i=str.length-1; i>=0; i-- ){
+// //     revStr += str[i];
+// //   }
+// //   return revStr;
+// // }
+
+// // console.log(reverseString('hello'));
+// function reverseString(str) {
+//     let arr = Array.from(str);
+//     let anstr='';
+//     let reverseArr = arr.reverse();
+//     let toStr = reverseArr.map((e)=>{
+//       anstr += e; 
+//     })
+//     return anstr
+//   }
+  
+//   console.log(reverseString(''));

@@ -93,3 +93,23 @@ const {name:Name, age:Age} = obj; //we can also change the keys name using the g
 // [
 //     {},{},{}
 // ] //Another way of API
+
+
+
+// const users = {
+//     Alan: {
+//       online: false
+//     },
+//     Jeff: {
+//       online: true
+//     },
+//     Sarah: {
+//       online: true
+//     }
+//   }
+
+  
+// let numOfU = 0;
+// for(const user in users){
+//       console.log(user,":", users[user].online);
+// }
