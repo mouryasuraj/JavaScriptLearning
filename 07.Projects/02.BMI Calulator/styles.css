@@ -59,14 +59,19 @@ form input{
     font-weight: bold;
     border-radius: 3px;
 }
+form .show-result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 form .showBMI{
     border: 1px solid;
     width: fit-content;
-    margin: 20px auto;
     padding: 5px 12px;
     background-color: rgb(58, 176, 223);
     color: white;
     border-radius: 3px;
+    margin-right: 20px;
 }
 /* Buttons */
 .buttons{
