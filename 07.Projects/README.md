@@ -341,3 +341,106 @@ clear.addEventListener('click', ()=>{
     weight.value = '';
 })
 ```
+
+<br>
+
+
+### project 3: Digital Clock
+
+<br>
+
+#### HTML CODE:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    
+    <!-- Digital Clock -->
+    <div class="clock">
+        <div class="clock-heading">Your local time</div>
+        <div class="time"></div>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="./script.js"></script>
+</body>
+</html>
+```
+
+<br>
+
+#### CSS CODE:
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+body{
+    font-size: 10px;
+}
+
+
+/* digital clock */
+
+/* clock */
+.clock{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+/* clock heading */
+.clock .clock-heading{
+    font-size: 2.5em;
+    font-weight: bold;
+    color: rgb(28, 150, 198);
+    margin-bottom: 20px;
+}
+
+
+/* clock time */
+.clock .time{
+    background-color: rgb(255, 132, 0);
+    padding: 10px 15px;
+    border-radius: 3px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+}
+```
+
+
+<br>
+
+#### JAVASCRIPT CODE:
+
+
+```javascript
+// Logic
+
+// select
+
+const time = document.querySelector('.time');
+
+// Show time
+setInterval(()=>{
+    const date = new Date();
+    time.innerHTML = date.toLocaleTimeString();
+}, 1000)
+```
