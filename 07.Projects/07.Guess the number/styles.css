@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+body,html{
+    font-size: 10px;
+    height: 100vh;
+    background-color: rgb(213, 223, 235);
+}
+
+input::-webkit-inner-spin-button, input::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+}
+
+input::placeholder{
+    text-align: center;
+}
+
+
+/* main */
+main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 2em;
+}
+
+/* container */
+.container{
+    width: 100%;
+    max-width: 60em;
+    background-color: rgb(196, 208, 216);
+    border-radius: 5px;
+    box-shadow: inset 6px 6px 8px rgba(0, 0, 0, 0.3), inset -6px -6px 8px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    padding: 20px;
+}
+
+/* heading */
+h2{
+    font-size: 2.8em;
+    font-weight:900;
+    margin: 20px;
+    color: rgb(15, 78, 103);
+    letter-spacing: 1.5px;
+}
+
+/* game info  */
+.game-info p{
+    margin-bottom: 8px;
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(5, 58, 58);
+}
+
+/* h1 */
+h1{
+    font-size: 4.1em;
+    margin: 4.5rem 0;
+    color: rgb(18, 125, 161);
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+/* form input */
+form input{
+    display:block;
+    margin: auto;
+}
+
+form input[type="number"]{
+    padding: 10px 20px;
+    outline: none;
+    border: 0;
+    border-radius: 3px;
+    width: 65%;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: rgb(90, 93, 94);
+    font-weight: bold;
+    text-align: center;
+}
+form input[type="submit"]{
+    border: 0;
+    outline: none;
+    padding: 10px 20px;
+    background-color: rgb(34, 91, 114);
+    color: white;
+    font-size: 1.8rem;
+    border-radius: 3px;
+    cursor:pointer;
+}
+.newGame{
+    border: 0;
+    outline: none;
+    padding: 10px 20px;
+    background-color: rgb(34, 91, 114);
+    color: white;
+    font-size: 1.8rem;
+    border-radius: 3px;
+    cursor:pointer;
+}
+
+
+/* previous guess */
+.previousGuess, .remainingGuess{
+    font-size: 2.2em;
+    margin-top: 20px;
+    font-weight: bold;
+    color: rgb(41, 111, 138);
+}
+.previousGuess span{
+    background-color: skyblue;
+    padding: 2px 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    color: rgb(248, 248, 248);
+}
+
+
+/* media query */
+
+@media screen and (max-width:600px) {
+    body,html{
+        font-size: 8px;
+    }
+    .container{
+        max-width: 100%;
+    }
+}
