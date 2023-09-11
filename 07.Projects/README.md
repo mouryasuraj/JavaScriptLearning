@@ -119,7 +119,7 @@ buttons.forEach((btn)=>{
 
 ```
 
-### project 2: Color Changer
+### project 2:BMI Calculator
 
 <br>
 
