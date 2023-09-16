@@ -767,3 +767,126 @@ const newGame = () => {
 
 
 ```
+
+
+
+## project 5: Unlimited Color 
+
+<br>
+
+#### HTML CODE:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Colors</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    
+    <!-- Unlimited Colors -->
+    <div class="container">
+        <h1>Unlimited Colors</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="./script.js"></script>
+</body>
+</html>
+```
+
+
+#### CSS CODE:
+
+<br>
+
+```CSS
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+body,html{
+    font-size: 10px;
+    height: 100vh;
+    background-color: rgb(213, 223, 235);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* container */
+
+.container{
+    text-align: center;
+}
+h1{
+    font-size: 45px;
+    color: rgb(32, 134, 175);
+    margin-bottom: 30px;
+}
+button{
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 0;
+    color: white;
+    background-color: rgb(90, 178, 212);
+    margin: 10px;
+    border-radius: 3px;
+}
+button:hover{
+    opacity: 0.8;
+}
+
+```
+
+
+#### JAVASCRIPT CODE:
+
+<br>
+
+```javascript
+// Logic
+
+// random color
+const randomColor = () => {
+   const hex = '0123456789ABCDEF';
+   let color = '#'
+   for(let i=0; i<6; i++){
+    color += hex[Math.floor(Math.random() * 16)]
+   }
+   return color;
+}
+
+// function to startChangingColor
+let intervalId;
+const startChangingColor = ()=>{
+    const changingColor =()=>{
+        document.body.style.backgroundColor = randomColor();
+    }
+    if(!intervalId){
+        intervalId = setInterval(changingColor, 1000)
+    }
+}
+
+// function to stopChangingColor
+const stopChangingColor = ()=>{
+    clearInterval(intervalId);
+    intervalId  = null;
+}
+
+
+// select
+document.querySelector('#start').addEventListener('click',startChangingColor);
+document.querySelector('#stop').addEventListener('click',stopChangingColor);
+```

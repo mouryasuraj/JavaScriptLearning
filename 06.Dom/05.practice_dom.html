@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Random color example — event handler attribute</title>
+  <style>
+    .tiles {
+      height: 100px;
+      width: 25%;
+      border: 1px solid;
+      cursor: pointer;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 10px;
+      border: 1px solid;
+    }
+  </style>
+</head>
+
+<body style="width: 100%; height: 100vh;">
+
+  <section class="preview">
+  </section>
+
+  <canvas width="480" height="320" tabindex="0">
+
+  </canvas>
+
+
+  <!-- script -->
+  <script>
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawCircle(x, y, size) {
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.beginPath();
+      ctx.fillStyle = 'black';
+      ctx.arc(x, y, size, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+
+    let x = 50;
+    let y = 50;
+    const size = 30;
+
+    drawCircle(x, y, size);
+
+    // // Add your code here
+    let keys = '';
+    canvas.addEventListener('keydown', (e) => {
+      for(let i=0 ; i<4; i++){
+        keys += e.key;
+      }
+    })
+    console.log(keys);
+
+  </script>
+</body>
+
+</html>

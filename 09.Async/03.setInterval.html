@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Helloe world</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <script>
+
+
+        // setInterval is used to repeat a code in a certain amout of time. examples is given below
+        let showDate = (str)=>{
+            console.log(str, Date.now())
+        }
+        // in setInterval there are three parameter we can accept one is a function and second is time and third is a string
+        let interval; 
+        document.querySelector('#start').addEventListener('click',()=>{
+            interval = setInterval(showDate, 1000, 'suraj');
+        })
+        document.querySelector('#stop').addEventListener('click',()=>{
+            clearInterval(interval)
+        })
+    </script>
+</body>
+</html>
