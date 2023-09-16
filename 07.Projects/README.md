@@ -890,3 +890,110 @@ const stopChangingColor = ()=>{
 document.querySelector('#start').addEventListener('click',startChangingColor);
 document.querySelector('#stop').addEventListener('click',stopChangingColor);
 ```
+
+
+
+
+## project 6: Keyboard 
+
+<br>
+
+
+#### HTML CODE:
+
+<br>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    
+
+    <!-- keyboard -->
+    <div class="insert">
+        <p>Press any key</p>
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="./script.js"></script>
+</body>
+</html>
+```
+
+
+#### CSS CODE:
+
+<br>
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+body,html{
+    font-size: 10px;
+    height: 100vh;
+    background-color: rgb(213, 223, 235);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* insert */
+.insert p{
+    font-size: 25px;
+    color: rgb(31, 140, 183);
+    font-weight: bold;
+}
+
+th,td{
+    padding: 10px;
+}
+
+
+```
+
+#### JAVASCRIPT CODE:
+
+<br>
+
+```javascript
+// Logic
+
+// select
+let insert = document.querySelector('.insert');
+
+window.addEventListener('keydown',(e)=>{
+    insert.innerHTML = `
+    <table border=2>
+        <tr>
+            <th>Key</th>
+            <th>KeyCode</th>
+            <th>Code</th>
+        </tr>
+        <tr>
+            <td>${e.key === ' ' ? 'Space' : e.key}</td>
+            <td>${e.keyCode}</td>
+            <td>${e.code}</td>
+        </tr>
+    </table>
+    `
+    document.querySelector('table').style.fontSize = '30px'
+    document.querySelector('table').style.borderCollapse = 'collapse'
+    document.querySelector('table').style.color = 'rgb(16, 78, 103)'
+})
+```
