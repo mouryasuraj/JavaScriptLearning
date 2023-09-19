@@ -997,3 +997,366 @@ window.addEventListener('keydown',(e)=>{
     document.querySelector('table').style.color = 'rgb(16, 78, 103)'
 })
 ```
+
+
+## project 7: Get Github Profile Info 
+
+<br>
+
+
+#### HTML CODE:
+
+<br>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Github Profile Info</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./styles.css">
+    <!-- fontawesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Get Github Profile Info by entering username of Github -->
+
+    <main>
+
+        <!-- heading -->
+        <h1 class="heading">Get Github Profile Info</h1>
+
+        <!-- form started -->
+        <form>
+            <!-- Enter your username -->
+            <input id="input" type="text" placeholder="Enter your username">
+            <!-- submit button -->
+            <button>Submit</button>
+        </form>
+        <!-- form ended -->
+
+        <!-- profile card started -->
+        <div class="profile-card">
+               <p class="title">Your Information Will Display Here</p>
+        </div>
+        </div>
+        <!-- profile card ended -->
+
+        <!-- modal started -->
+        <div class="modal">
+            
+        </div>
+        <!-- modal ended -->
+    </main>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
+
+```
+
+
+### CSS CODE:
+
+<br>
+
+```css
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+/* body and html */
+body,html{
+    width: 100%;
+    height: 100vh;
+    font-size: 10px;
+    /* background-color: rgb(199, 213, 228); */
+}
+
+/* main Started */
+
+main{
+    width: 100%;
+    height: 100%;
+    padding: 2em 3em;
+    background: linear-gradient( rgb(214, 224, 235),rgb(170, 201, 234),  rgb(100, 159, 219));
+}
+
+
+/* heading */
+.heading{
+    font-size: 3em;
+    color: rgb(17, 57, 72);
+    font-weight: 800;
+    text-align: center;
+    margin-top: 1em;
+}
+
+
+/* form started */
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 40em;
+    margin:1em auto;
+    padding: 1.5em;
+}
+
+form input{
+    padding: 1em;
+    border: 0;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(6, 62, 85);
+}
+form button{
+    margin: 1em auto;
+    padding: 10px 25px;
+    border-radius: 3px;
+    font-size: 1.8em;
+    cursor: pointer;
+    border: 0;
+    background-color: rgb(14, 62, 79);
+    color: white;
+    transition: all ease .5s;
+}
+form button:active{
+    transform: scale(0.8);
+}
+
+/* form ended */
+
+
+/* profile card started */
+
+.profile-card{
+    max-width: 60em;
+    margin: auto;
+    background-color: rgb(251, 251, 252);
+    height:fit-content;
+    padding: 20px;
+    border-radius: 5px;
+}
+.profile-card .title{
+    text-align: center;
+}
+.profile-card p{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(20, 53, 66);
+    margin: 8px 0;
+}
+.profile-card p span{
+    color: rgb(30, 120, 155);
+}
+
+.profile-card p a{
+    color: rgb(18, 148, 31);
+}
+
+.profile-card p a:hover{
+    color: rgb(20, 53, 66);
+}
+
+.profile-card img{
+    float: right;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all ease .3s;
+}
+.profile-card img:hover{
+    transform: scale(0.9);
+}
+/* profile card ended */
+
+
+/* modal started */
+
+.modal{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+.modal .pop-up{
+    position: relative;
+}
+.modal img{
+    border-radius: 50%;
+}
+.modal i{
+    font-size: 4em;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    transition: all ease .5s;
+}
+.modal i:hover{
+    transform: rotate(180deg);
+}
+
+/* modal ended */
+
+
+/* main ended */
+
+
+@media screen and (max-width:500px) {
+    body,html{
+        font-size: 9px;
+    }
+    .profile-card{
+        padding: 15px;
+    }
+    .modal img{
+        width: 250px;
+    }
+    .modal i:hover{
+        transform: none;
+    }
+    .profile-card img:hover{
+        transform: none;
+    }
+}
+
+```
+
+
+### JAVASCRIPT CODE:
+
+<br>
+
+```javascript
+// Logic
+
+
+// get user value from input field
+
+const form = document.querySelector('form');
+let input = document.querySelector('#input');
+let valueOfUser;
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    valueOfUser = String(input.value);
+    if (valueOfUser === '') {
+        alert('Please enter your github username')
+    }
+
+    fetchData();
+    showData();
+    input.value = '';
+    showModal();
+})
+
+
+
+// logic to fetch user data and show in the html page
+let userData;
+function fetchData() {
+    const requestURL = `https://api.github.com/users/${valueOfUser}`;
+    const xhr = new XMLHttpRequest;
+    xhr.open('GET', requestURL);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            userData = JSON.parse(this.responseText)
+            console.log(userData.avatar_url);
+        }
+    }
+    xhr.send()
+}
+
+
+// showData
+function showData() {
+    let profileCard = document.querySelector('.profile-card')
+    profileCard.innerHTML = 
+    // `
+    // <img class="profileImg" src="${userData.avatar_url}" alt="">
+    // <p> <span>Name:</span> ${userData.name}</p>
+    // `
+        `
+        <img class="profileImg" src="${userData.avatar_url}" alt="">
+        <p> <span>Name:</span> ${userData.name}</p>    
+        <p> <span>Username:</span> ${userData.login}</p>    
+        <p> <span>Followers:</span> ${userData.followers}</p>    
+        <p> <span>Following:</span> ${userData.following}</p>    
+        <p> <span>Public Repository:</span> ${userData.public_repos}</p>    
+        <p> <span>Created at:</span> ${userData.created_at}</p>    
+        <p> <span>Updated at:</span> ${userData.updated_at}</p>    
+        <p> <span>Bio:</span> ${userData.bio}</p>    
+        <p> <span>Location:</span> ${userData.location}</p>    
+        <p> <span>Twitter:</span> <a target='_blank' href="https://twitter.com/${userData.twitter_username}">${userData.twitter_username}</a></p>    
+        <p> <span>Blog:</span> <a target='_blank' href="${userData.blog}">${userData.blog}</a></p>    
+        <p> <span>Github Profile:</span> <a target='_blank' href="${userData.html_url}">${userData.html_url}</a></p> 
+    `
+}
+
+
+// Logic to show modal when user clicks on profile image started
+
+// function to show modal
+function showModal() {
+    // modal
+    // select
+    // card Img
+    const profileImg = document.querySelector('.profileImg')
+    // modal
+    let modal = document.querySelector('.modal')
+    
+    // eventListener to show modal
+    profileImg.addEventListener('click', () => {
+        modal.style.zIndex = '1'
+    })
+
+    
+    // modal innerHTML
+    modal.innerHTML =
+    `
+    <div class="pop-up">
+    <img class="modalImg" src="${userData.avatar_url}" alt="">
+    <i class="fa-solid fa-xmark" style="color: #ffffff;"></i>
+    </div>
+    `
+
+    // cross button
+    const crossIcon = document.querySelector('.fa-solid');
+    // eventListener to close modal
+    crossIcon.addEventListener('click', () => {
+        modal.style.zIndex = '-1';
+    })
+}
+
+
+// Logic to show modal when user clicks on profile image Ended
+
+
+
+
+```
