@@ -12,27 +12,27 @@
 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
 3	LOADING	Downloading; responseText holds partial data.
 4	DONE	The operation is complete. -->
-<script>
+<script src="./02.promise.js">
 
-    //XMLHttpRequest is not used in today's date
+    // //XMLHttpRequest is not used in today's date
 
-    // XMLHttpRequest is class so we have to create its object
-    const requestUrl = 'https://api.github.com/users/mouryasuraj'
-    const xhr = new XMLHttpRequest;
-    //open method is used to send request.It takes two parameters(method in the form of string, url in the form of string)
-    xhr.open('GET', requestUrl);
-    // onreadystatechange is take a function and return things according to the changing in state
-    xhr.onreadystatechange = function(){
-        console.log(xhr.readyState);
-        // whenever we request data. In most of the cases we get date in string format. so we have convert string into object using JSON.parse(response)
-        if(xhr.readyState === 4){
-            let data =JSON.parse(this.responseText)
-            console.log(typeof data); //
-            console.log(data.name);
-        }
-    }
-    //send method is used to get response from the link
-    xhr.send();
+    // // XMLHttpRequest is class so we have to create its object
+    // const requestUrl = 'https://api.github.com/users/mouryasuraj'
+    // const xhr = new XMLHttpRequest;
+    // //open method is used to send request.It takes two parameters(method in the form of string, url in the form of string)
+    // xhr.open('GET', requestUrl);
+    // // onreadystatechange is take a function and return things according to the changing in state
+    // xhr.onreadystatechange = function(){
+    //     console.log(xhr.readyState);
+    //     // whenever we request data. In most of the cases we get date in string format. so we have convert string into object using JSON.parse(response)
+    //     if(xhr.readyState === 4){
+    //         let data =JSON.parse(this.responseText)
+    //         console.log(typeof data); //
+    //         console.log(data.name);
+    //     }
+    // }
+    // //send method is used to get response from the link
+    // xhr.send();
 
 </script>
 </body>
