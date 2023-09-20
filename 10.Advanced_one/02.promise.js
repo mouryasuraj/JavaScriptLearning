@@ -3,18 +3,18 @@
 
 // how to create promise(one way to create promise)
 // Promise is object. So, when you created any instance of object, you have to use new keyword to create.
-// Promise takes two parameter(resole, reject)
+// Promise takes two parameter(resolve, reject)
 const promiseOne = new Promise(function (resolve, reject) {
     //Do an async task
     //DB call, cryptography, networkcall
     setTimeout(() => {
         // console.log('task completed');
-        // if we want to run the then methoud then we have to pass the resolve method.
+        // if we want to run then method then we have to pass the resolve method.
         resolve();
     }, 1000);
 })
 
-// then method takes automatically an argument which is a resolveMethod.
+// then method takes automatically an argument which is a resolve Method.
 promiseOne.then(() => {
     // console.log('promise completed');
 });
@@ -77,7 +77,7 @@ const promiseFive = new Promise((resolve, reject) => {
     }, 1000);
 })
 
-//if we want to return any thing the we have to use chain method example is given below.
+//if we want to return any thing then we have to use chain method example is given below.
 promiseFive.then((arr) => {
     // console.log(arr);
     return arr[1];

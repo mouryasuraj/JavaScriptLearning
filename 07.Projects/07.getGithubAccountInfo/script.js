@@ -14,8 +14,6 @@ form.addEventListener('submit', (e) => {
         return alert('Please enter your github username')
     }
     fetchData();
-    input.value = '';
-    valueOfUser = '';
 })
 
 
@@ -26,7 +24,7 @@ let userData;
 let createdAtdate;
 let updatedAtdate;
 function fetchData() {
-    const requestURL =  `https://api.github.com/users/${valueOfUser}`;
+    const requestURL = `https://api.github.com/users/${valueOfUser}`;
     const xhr =  new XMLHttpRequest;
     xhr.open('GET', requestURL);
     xhr.onreadystatechange = function () {
@@ -38,8 +36,9 @@ function fetchData() {
         }
     }
     xhr.send()
-    createdAtdate = new Date(userData.created_at).toLocaleDateString("en-IN");
-    updatedAtdate = new Date(userData.updated_at).toLocaleDateString("en-IN");
+    createdAtdate = new Date(userData.created_at).toLocaleDateString();
+    updatedAtdate = new Date(userData.updated_at).toLocaleDateString();
+    input.value = '';
     showData();
 }
 
