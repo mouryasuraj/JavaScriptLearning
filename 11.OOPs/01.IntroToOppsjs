@@ -67,9 +67,45 @@ const userOne = new User("suraj", 1);
 const userTwo = new User("mourya", 2);
 const userThree = new Users("mourya", 2);
 
-console.log(userThree instanceof Users);
+// console.log(userThree instanceof Users);
 
 // new -->
 // 1)when we use new keyword a new object is created which is also called as instance
 // 2)new keyword calls the constructor
 // 3)whatever the arguments are passes to the constructor it will goes to this keyword (means object)
+
+
+
+
+// OOps from freeCodeCamp
+
+class Alien {
+    #birthday;
+    constructor(name, phrase,birthday) {
+        this.name = name;
+        this.phrase = phrase;
+        this.species = 'Alien'
+        this.#birthday = birthday;
+    }
+    fly = () => {
+        console.log('fly');
+    }
+    sayBirthday = () => {
+        console.log(this.#birthday);
+    }
+}
+
+
+const ene = new Alien('ali', '35','22 Dec 2000');
+console.log(ene.sayBirthday());
+console.log(ene);
+
+
+
+// How to build logic in programming
+
+// Step1--> Data flow(if....else)
+// Step2--> 90% teacher and 10% us
+// Step3--> To do's
+// Step4--> Added value to the project
+
