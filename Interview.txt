@@ -1,6 +1,0 @@
-Functions in JS are first-class Citizens, 
-what does that mean? 
-What is the difference between Function Statements and Function Expressions? 
-What are Anonymous Functions? 
-What are First Class Functions? and What is first class Citizens
-What is the difference between Function Parameter and Function Arguments?
