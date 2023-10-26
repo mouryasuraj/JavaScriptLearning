@@ -94,6 +94,67 @@ r(function () {
 
 
 
+// Js Engine exposed vd V8 architecture
+/*
+1.If we need to execute any piece of javscript code we need javscript run time environment
+2.In the browser, we have javsScript environment and in this js runtime environment we have js engine, web api's, task queue, microtask queue, event loop and other API's. Basically, js runtime is not possible without js engine. So, js engine is like heart of js run time environment.
+
+Js engine :https://en.wikipedia.org/wiki/JavaScript_engine
+First js engine was spidermonkey which is implemented in firefox and created by Brendan Eich(created javscript)
+
+3.Js engine is not a machine, Its just a program which is written in low level language. V8 engine is written in c++ language
+
+// How v8 works
+1. In js engine, it takes a human readable code and process through three level:
+    1.Parsing : 
+        a.First it split code into tokens (eg: let a = 10, In this code let,a,=,10 is token)
+        b.There is syntax parser. It takes the code and converted into AST(Absract Syntax Tree)
+            Eg: https://astexplorer.net/
+    2.compilation:
+        a.Below AST tree will passed into the compilaton phase
+        b.Just In Time COmpilation uses both interpreter and compiler 
+        c.Interpreter take the AST and convert this code into byte code and put this code to the executio phase and simultaneously compiler optimized the code. 
+    3.execution:
+        a. Execution is not possible without these two major components of js engine that is Menory heap and call stack
+        b. Memory is the place where all varibles and function assigned memory.
+        c. There is also a garbage collector. It uses the Mark and Sweep algorithm to take the unneccesary variables and function which is not in used.
+
+
+        Marks and Sweep algorithm : https://www.tutorialspoint.com/explain-in-detail-about-mark-and-sweep-algorithm-in-javascript
+
+// Overview to javscript
+Things learned:
+    1. JS runtime environment contains all elements required to run JS.
+    2. It contains JS engine, set of API's, callback queue, microtask queue, event loop.
+    3. JS engine is a piece of code.
+    4. Process includes Parsing ---> Compilation -----> Execution.
+    5. Parsing breaks code into tokens and converts it into AST(Abstract Syntax Tree).
+    6. Modern JS engine follows JIT compilation, it interprets while it optimises code as much as it can.
+    7. Execution and Compilation are done together.
+    8. Execution has Garbage collector and other optimisation such as inlining, copy elusion, inline caching etc.
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Question from FreeCodeCamp of javascript
 // URL to the questions : https://www.freecodecamp.org/news/javascript-interview-prep-cheatsheet/
@@ -276,5 +337,93 @@ function consoleNum() {
 
 
 var num
-console.log(num)
+// console.log(num)
 num = 9
+
+
+
+
+
+// How this keyword works
+
+// Example 1
+console.log(this)
+
+
+// example 2
+function myFunc() {
+    console.log(this);
+}
+
+let obj = {
+    myFunc: myFunc,
+    name: 'suraj',
+    suraname: 'mourya'
+}
+
+// obj.myFunc()
+
+// We again get the window object. So, we can see that the value of this depends on how and where are we doing the calling.
+
+// What we just did above is called Implicit Binding. The value of this got bound to the object.
+
+// There is another way to use this. Explicit binding is when you force a function to use a certain object as its this.
+
+
+const myData = {
+    name: 'Rajat',
+    city: 'Delhi',
+    displayStay: function () {
+        console.log(this.name, 'stays in', this.city)
+    },
+}
+// myData.displayStay()
+
+//   create an object yourData and try to use displayStay
+const yourData = {
+    name: 'Suraj',
+    city: 'Mumbai'
+}
+
+
+//   // answer
+// myData.displayStay.call(yourData)
+
+
+
+
+
+// Prototypes 
+let arr = ['Rajat', 'Raj']
+// console.log(arr);
+// console.log(arr.__proto__.forEach)
+// console.log(arr.__proto__) // same as Array.prototype
+// console.log(arr.__proto__.__proto__) // same as Object.prototype
+// console.log(arr.__proto__.__proto__.__proto__) // null
+
+
+
+// prototyes inheritance
+// This is prototypal inhritance 
+
+const obj1 = {
+    name:"suraj",
+    city:"mumbai"
+}
+
+const obj2 = {
+    name:"shiv"
+}
+
+obj2.__proto__ = obj1
+
+
+
+// console.log(obj2.city);
+
+
+for (let i = 1; i <=5; i++) {
+    setTimeout(() => {
+        console.log(i);
+    },i* 1000);    
+}
