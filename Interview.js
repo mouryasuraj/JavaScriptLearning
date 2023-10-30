@@ -12,7 +12,7 @@ function a() {
 }
 
 // Function expression
-// When you put an anonymous fucntion or named function in a value or use as a value then it is known as fucntion expression
+// When you put an anonymous fucntion or a named function in a value or use as a value then it is known as fucntion expression
 let b = function () {
     console.log('expression');
 }
@@ -94,7 +94,7 @@ r(function () {
 
 
 
-// Js Engine exposed vd V8 architecture
+// Js Engine exposed vs V8 architecture
 /*
 1.If we need to execute any piece of javscript code we need javscript run time environment
 2.In the browser, we have javsScript environment and in this js runtime environment we have js engine, web api's, task queue, microtask queue, event loop and other API's. Basically, js runtime is not possible without js engine. So, js engine is like heart of js run time environment.
@@ -111,9 +111,9 @@ First js engine was spidermonkey which is implemented in firefox and created by 
         b.There is syntax parser. It takes the code and converted into AST(Absract Syntax Tree)
             Eg: https://astexplorer.net/
     2.compilation:
-        a.Below AST tree will passed into the compilaton phase
+        a.Above AST tree will passed into the compilaton phase
         b.Just In Time COmpilation uses both interpreter and compiler 
-        c.Interpreter take the AST and convert this code into byte code and put this code to the executio phase and simultaneously compiler optimized the code. 
+        c.Interpreter take the AST and convert this code into byte code and put this code to the execution phase and simultaneously compiler optimized the code. 
     3.execution:
         a. Execution is not possible without these two major components of js engine that is Menory heap and call stack
         b. Memory is the place where all varibles and function assigned memory.
@@ -138,11 +138,91 @@ Things learned:
 
 
 
+// SetTimeout trust issues
+
+// console.log('Start');
+
+setTimeout(() => {
+    console.log('call back');
+}, 5000);
+
+// console.log('End');
+
+
+// let startDate = new Date().getTime();
+// let endDate = startDate;
+// while(endDate < startDate + 10000){
+//     endDate = new Date().getTime();
+// }
+
+
+// console.log('While Expires');
+
+// First browser console.log--> start, end while Expires , call back
+
+// Note: Concurrency model is the way to execute asynchronous code
 
 
 
 
 
+// Higher order Function
+
+// When we passed a function inside another function as an argument or return a function inside another funciton is called Higher order function
+// The function which is passed into the higher order function is called callback funciton which is called sometime else in the program
+
+
+const radius = [3, 1, 2, 4];
+const area = function (radius) {
+    return Math.PI * radius * radius
+}
+const circumference = function (radius) {
+    return 2 * Math.PI * radius;
+}
+const diameter = function (radius) {
+    return 2 * radius;
+}
+
+// const calculate = function (radius, formula) {
+//     const output = [];
+//     for (let i = 0; i < radius.length; i++) {
+//         output.push(formula(radius[i]))
+//     }
+//     return output;
+// }
+
+console.log(radius.map(area));
+// What does map do behind the scene
+
+Array.prototype.calculate = function (formula) {
+    const output = [];
+    for (let i = 0; i < this.length; i++) {
+        output.push(formula(this[i]))
+    }
+    return output;
+}
+
+console.log(radius.calculate(area));
+
+
+// console.log(calculate(radius, area));
+// console.log(calculate(radius, circumference));
+// console.log(calculate(radius, diameter));
+
+
+
+
+
+// Prototypes and prototypal inheritance\
+Prototypes
+// Imagine a Recipe Book: Prototypes in JavaScript are like a recipe book. They contain instructions (methods) and a list of ingredients (properties) for creating objects.
+
+// Master Template: Think of the prototype as a master template or blueprint. It's a predefined structure that other objects can follow.
+
+// Prototypal Inheritance
+// Family Tree Connection: Just like in a family, where children inherit traits from their parents, in JavaScript, objects can inherit properties and behaviors from their prototypes.
+
+// Chain of References: Objects in JavaScript have a link to their prototype. If an object doesn't have a property or method, it looks up the chain to its prototype to find what it needs.
 
 
 
@@ -218,7 +298,7 @@ function adder() {
     // console.log(a + b)
 }
 
-console.log(adder())
+// console.log(adder())
 
 // console.log(b) // Error as b is not accessible outside the function
 
@@ -243,7 +323,7 @@ const greet = () => {
     }
 }
 
-console.log(greet()('Jack'))
+// console.log(greet()('Jack'))
 // This section will have a lot of fancy words, so bear with me. We will cover them one by one.
 
 // MDN says:
@@ -347,7 +427,7 @@ num = 9
 // How this keyword works
 
 // Example 1
-console.log(this)
+// console.log(this)
 
 
 // example 2
@@ -407,12 +487,12 @@ let arr = ['Rajat', 'Raj']
 // This is prototypal inhritance 
 
 const obj1 = {
-    name:"suraj",
-    city:"mumbai"
+    name: "suraj",
+    city: "mumbai"
 }
 
 const obj2 = {
-    name:"shiv"
+    name: "shiv"
 }
 
 obj2.__proto__ = obj1
@@ -422,8 +502,8 @@ obj2.__proto__ = obj1
 // console.log(obj2.city);
 
 
-for (let i = 1; i <=5; i++) {
+for (let i = 1; i <= 5; i++) {
     setTimeout(() => {
         console.log(i);
-    },i* 1000);    
+    }, i * 1000);
 }

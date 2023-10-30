@@ -60,3 +60,5 @@ setInterval(() => {
     str = str[str.length - 1] + str.substring(0, str.length - 1);
     head.innerHTML = str;
 }, 1000)
+
+
