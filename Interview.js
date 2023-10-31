@@ -79,7 +79,7 @@ r(function () {
 // Asynchronous javascript and event loop
 
 // FIrst, javascript engine create global execution context and the run the code one line at a time
-// For setTimeout , DOmAPI and other api's in browser will go through task queue(call back queue) but Promises and Mutation observation will go through micro task Queue and micro task queue have high priority. So, when call stack is empty our event loop check that call stack is empty  and it take's function from micro task queue instead of taking function from task queue because micro task have high priority.
+// For setTimeout , DOmAPI and other api's in browser will go through task queue(call back queue) but Promises and Mutation observation will go through micro task Queue and micro task queue have high priority. So, when call stack is empty our event loop check that call stack is empty  and it take's function from micro task queue instead of taking callback's from task queue because micro task have high priority.
 
 
 // Webapi's like
@@ -115,7 +115,7 @@ First js engine was spidermonkey which is implemented in firefox and created by 
         b.Just In Time COmpilation uses both interpreter and compiler 
         c.Interpreter take the AST and convert this code into byte code and put this code to the execution phase and simultaneously compiler optimized the code. 
     3.execution:
-        a. Execution is not possible without these two major components of js engine that is Menory heap and call stack
+        a. Execution is not possible without these two major components of js engine that is Memory heap and call stack
         b. Memory is the place where all varibles and function assigned memory.
         c. There is also a garbage collector. It uses the Mark and Sweep algorithm to take the unneccesary variables and function which is not in used.
 
@@ -169,7 +169,7 @@ setTimeout(() => {
 // Higher order Function
 
 // When we passed a function inside another function as an argument or return a function inside another funciton is called Higher order function
-// The function which is passed into the higher order function is called callback funciton which is called sometime else in the program
+// The function which is passed into the higher order function is known as callback funciton which is called sometime else in the program
 
 
 const radius = [3, 1, 2, 4];
@@ -214,7 +214,7 @@ console.log(radius.calculate(area));
 
 
 // Prototypes and prototypal inheritance\
-Prototypes
+// Prototypes
 // Imagine a Recipe Book: Prototypes in JavaScript are like a recipe book. They contain instructions (methods) and a list of ingredients (properties) for creating objects.
 
 // Master Template: Think of the prototype as a master template or blueprint. It's a predefined structure that other objects can follow.
@@ -223,6 +223,128 @@ Prototypes
 // Family Tree Connection: Just like in a family, where children inherit traits from their parents, in JavaScript, objects can inherit properties and behaviors from their prototypes.
 
 // Chain of References: Objects in JavaScript have a link to their prototype. If an object doesn't have a property or method, it looks up the chain to its prototype to find what it needs.
+
+
+
+// Map, filter reduce
+
+// Map --> Map function is used when we want transformation in array and map function return a new array. 
+const arr1 = [5, 1, 4, 6];
+const output = arr1.map((x) => x.toString(2));
+// console.log(output);
+
+// Filter ---> filter function is used to just filter out what you need
+
+const output1 = arr1.filter((x) => x > 4);
+// console.log(output1);
+
+
+// Reduce ---> 
+// In JavaScript, the reduce() method is used to iterate through an array and accumulate a single result (such as a number, object, string, etc.) based on the elements of the array. The reduce() method executes a provided callback function on each element of the array and returns a single value.
+
+// Ex : Find sum of element in arr1
+const output2 = arr1.reduce((acc, curr) => {
+    return acc + curr;
+}, 0)
+// console.log(output2);
+
+// Ex : Find Max value in arr1
+
+const arr2 = [5, 1, 14, 6];
+
+// NOrmal way to find sum of all the element present in the arr2
+function sum(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]
+    }
+    return sum
+}
+// console.log(sum(arr2));
+
+// Use reduce method to find the sum of the element
+const output3 = arr2.reduce((acc, curr) => {
+    return acc + curr
+}, 0)
+// console.log(output3);
+
+
+
+// Find max  number using reduce function
+const output4 = arr2.reduce((acc, curr) => {
+    if (acc < curr) {
+        acc = curr;
+    }
+    return acc
+}, 0)
+
+// console.log(output4);
+
+
+
+// More examples 
+
+// Map
+const users = [
+    { firstName: 'Suraj', lastName: 'Mourya' },
+    { firstName: 'Vipin', lastName: 'Yadav' },
+    { firstName: 'Vishal', lastName: 'Gupta' },
+    { firstName: 'Suresh', lastName: 'Raina' },
+]
+const output5 = users.map(x => x.firstName + " " + x.lastName);
+console.log(output5);
+
+
+// reduce
+const user1 = [
+    { firstName: 'Suraj', lastName: 'Mourya', age: 26 },
+    { firstName: 'Vipin', lastName: 'Yadav', age: 45 },
+    { firstName: 'Vishal', lastName: 'Gupta', age: 25 },
+    { firstName: 'Suresh', lastName: 'Raina', age: 56 },
+    { firstName: 'Vipin', lastName: 'Yadav', age: 22 },
+    { firstName: 'Vishal', lastName: 'Gupta', age: 20 },
+    { firstName: 'Suresh', lastName: 'Raina', age: 46 },
+]
+
+// {26 : 2, 25:2, ....}
+const output6 = user1.reduce((user, curr) => {
+    if (user[curr.age]) {
+        user[curr.age] = user[curr.age] + 1
+    } else {
+        user[curr.age] = 1
+    }
+    return user
+}, {})
+console.log(output6);
+
+
+
+// filter out first name whose age is less than 30
+const output7 = user1.filter((x) => {
+    if (x.age < 30) {
+        return x.firstName
+    }
+}).map((x) => x.firstName)  //here map function will map on what filter function returns
+
+console.log(output7);
+
+
+// Filter our first name whose age is less than 30 using reduce
+const output8 = user1.reduce((firstName, user)=>{
+    if(user.age < 30){
+        firstName.push(user.firstName)
+    }
+    return firstName
+},[])
+console.log(output8);
+
+
+
+
+
+
+
+
 
 
 
