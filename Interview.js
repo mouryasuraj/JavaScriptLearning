@@ -233,7 +233,7 @@ const arr1 = [5, 1, 4, 6];
 const output = arr1.map((x) => x.toString(2));
 // console.log(output);
 
-// Filter ---> filter function is used to just filter out what you need
+// Filter ---> filter function is used to just filter out what you need and it also return a new array
 
 const output1 = arr1.filter((x) => x > 4);
 // console.log(output1);
@@ -302,7 +302,7 @@ const user1 = [
     { firstName: 'Vishal', lastName: 'Gupta', age: 25 },
     { firstName: 'Suresh', lastName: 'Raina', age: 56 },
     { firstName: 'Vipin', lastName: 'Yadav', age: 22 },
-    { firstName: 'Vishal', lastName: 'Gupta', age: 20 },
+    { firstName: 'Vishal', lastName: 'Gupta', age: 26 },
     { firstName: 'Suresh', lastName: 'Raina', age: 46 },
 ]
 
@@ -321,9 +321,7 @@ console.log(output6);
 
 // filter out first name whose age is less than 30
 const output7 = user1.filter((x) => {
-    if (x.age < 30) {
-        return x.firstName
-    }
+    if (x.age < 30) return
 }).map((x) => x.firstName)  //here map function will map on what filter function returns
 
 console.log(output7);
@@ -337,6 +335,23 @@ const output8 = user1.reduce((firstName, user)=>{
     return firstName
 },[])
 console.log(output8);
+
+
+
+
+
+// Callback
+// We have face two issues in callback 
+  /*
+  
+  1.Callback hell
+    ---> When passing callback function inside another function as an argument and pass another callback function into the inside function and it continues. It forms call back hell.
+    It forms code unreadable and unmaintainable and it creates code horizontally instead of vertically.
+
+  2.Inversion of control
+    ---> The callback function is passed to another callback, this way we lose the control of our code. We don't know what is happening behind the scene and program become very difficult to maintain. This mechanism is called Inversion of control.
+  */
+
 
 
 
