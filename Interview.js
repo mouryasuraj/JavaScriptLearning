@@ -328,12 +328,12 @@ console.log(output7);
 
 
 // Filter our first name whose age is less than 30 using reduce
-const output8 = user1.reduce((firstName, user)=>{
-    if(user.age < 30){
+const output8 = user1.reduce((firstName, user) => {
+    if (user.age < 30) {
         firstName.push(user.firstName)
     }
     return firstName
-},[])
+}, [])
 console.log(output8);
 
 
@@ -342,18 +342,45 @@ console.log(output8);
 
 // Callback
 // We have face two issues in callback 
-  /*
-  
-  1.Callback hell
-    ---> When passing callback function inside another function as an argument and pass another callback function into the inside function and it continues. It forms call back hell.
-    It forms code unreadable and unmaintainable and it creates code horizontally instead of vertically.
+/*
+ 
+1.Callback hell
+  ---> When passing callback function inside another function as an argument and pass another callback function into the inside function and it continues. It forms call back hell.
+  It forms code unreadable and unmaintainable and it creates code horizontally instead of vertically.
 
-  2.Inversion of control
-    ---> The callback function is passed to another callback, this way we lose the control of our code. We don't know what is happening behind the scene and program become very difficult to maintain. This mechanism is called Inversion of control.
-  */
+2.Inversion of control
+  ---> The callback function is passed to another callback, this way we lose the control of our code. We don't know what is happening behind the scene and program become very difficult to maintain. This mechanism is called Inversion of control.
+*/
 
 
 
+
+// Promises  
+/*
+Simple definition---> Promises is used to handle asynchronous javscript.
+
+const cart = ["shoes", "pants", "kurta"]
+
+createOrder(cart, function(orderId){
+    proceedToPayment(orderId)
+})
+
+// With promise
+
+const promise = createOrder(cart);
+promise.then(function(orderId){
+    proceedToPayment(orderId)
+});
+*/
+
+// 1.Promise is like placeholder which will be filled later with the value
+// 2.A container for future value
+// 3.Promise is an object representing the eventual completion or failure of an asynchronous operation.
+
+// Promise chaining
+// Why we need promise
+// use of promise
+// advantage of promise
 
 
 
