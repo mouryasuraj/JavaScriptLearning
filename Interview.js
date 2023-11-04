@@ -191,7 +191,7 @@ const diameter = function (radius) {
 //     return output;
 // }
 
-console.log(radius.map(area));
+// console.log(radius.map(area));
 // What does map do behind the scene
 
 Array.prototype.calculate = function (formula) {
@@ -202,7 +202,7 @@ Array.prototype.calculate = function (formula) {
     return output;
 }
 
-console.log(radius.calculate(area));
+// console.log(radius.calculate(area));
 
 
 // console.log(calculate(radius, area));
@@ -292,7 +292,7 @@ const users = [
     { firstName: 'Suresh', lastName: 'Raina' },
 ]
 const output5 = users.map(x => x.firstName + " " + x.lastName);
-console.log(output5);
+// console.log(output5);
 
 
 // reduce
@@ -315,7 +315,7 @@ const output6 = user1.reduce((user, curr) => {
     }
     return user
 }, {})
-console.log(output6);
+// console.log(output6);
 
 
 
@@ -324,7 +324,7 @@ const output7 = user1.filter((x) => {
     if (x.age < 30) return
 }).map((x) => x.firstName)  //here map function will map on what filter function returns
 
-console.log(output7);
+// console.log(output7);
 
 
 // Filter our first name whose age is less than 30 using reduce
@@ -334,7 +334,7 @@ const output8 = user1.reduce((firstName, user) => {
     }
     return firstName
 }, [])
-console.log(output8);
+// console.log(output8);
 
 
 
@@ -381,6 +381,112 @@ promise.then(function(orderId){
 // Why we need promise
 // use of promise
 // advantage of promise
+
+
+
+
+
+
+// How to create promises in js?
+
+// const cart = ["shoes", "pants", "kurta"]
+
+// const promise = createOrder(cart);
+
+// promise.then((orderId)=>{
+//     console.log(orderId);
+// })
+// .catch((err)=>{
+//     console.log(err.message);  //meassage is used to show error without red color and it simply log the error
+// })
+
+// function createOrder(cart) {
+//     const pr = new Promise((resolve, reject)=>{
+//         // Logic to validate cart
+//         if(!validateCart(cart)){
+//             let err = new Error('Cart is not valid')
+//             reject(err)
+//         }
+//         let orderId = '465678'
+//         if(orderId){
+//             resolve(orderId);
+//         }
+//     })
+//     return pr;
+// }
+// function validateCart(cart){
+//     return false;
+// }
+
+
+
+
+// Promises chaining
+
+const cart = ["shoes", "pants", "kurta"]
+
+
+// promise handle
+createOrder(cart)
+.then((orderId)=>{
+    console.log('Order id:' +orderId);
+    return orderId
+})
+// .catch((err)=>console.log(err.message))      //If i handle error here then it will handle the error above to its code and below code also run
+.then(orderId => proceedToPayment(orderId))
+.then(orderId => showSummary(orderId))
+.then(orderId => walletUpdated(orderId))
+.catch((err)=>console.log(err.message)) //meassage is used to show error without red color and it simply log the error and it will handle error from the top of the code It will not handle below then code
+.then(()=>{
+    console.log("No matter what happnes, I will definitely be called!");
+})
+
+function createOrder(cart) {
+    const pr = new Promise((resolve, reject)=>{
+        // Logic to validate cart
+        if(!validateCart(cart)){
+            let err = new Error('Cart is not valid')
+            reject(err)
+        }
+        let orderId = '465678'
+        if(orderId){
+            resolve(orderId);
+        }
+    })
+    return pr;
+}
+// Fucntion to validate cart
+function validateCart(cart){
+    console.log("Card is validated");
+    return true;
+}
+// Fucntion to proceed with payment
+function proceedToPayment(orderId){
+    return new Promise((resolve,reject)=>{
+        resolve(console.log('Payment Completed for id: '+ orderId))
+    })
+
+}
+
+// Fucntion to show the summary
+function showSummary(orderId){
+    console.log('Summary for id: '+ orderId);
+}
+
+// Fucntion to update the wallet
+function walletUpdated(orderId){
+    console.log('Wallet updated for id: '+ orderId);
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
