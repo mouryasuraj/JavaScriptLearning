@@ -142,9 +142,9 @@ Things learned:
 
 // console.log('Start');
 
-setTimeout(() => {
-    console.log('call back');
-}, 5000);
+// setTimeout(() => {
+//     console.log('call back');
+// }, 5000);
 
 // console.log('End');
 
@@ -397,7 +397,7 @@ promise.then(function(orderId){
 //     console.log(orderId);
 // })
 // .catch((err)=>{
-//     console.log(err.message);  //meassage is used to show error without red color and it simply log the error
+//     console.log(err.message);  //message is used to show error without red color and it simply log the error
 // })
 
 // function createOrder(cart) {
@@ -420,6 +420,7 @@ promise.then(function(orderId){
 
 
 
+/*
 
 // Promises chaining
 
@@ -432,11 +433,11 @@ createOrder(cart)
     console.log('Order id:' +orderId);
     return orderId
 })
-// .catch((err)=>console.log(err.message))      //If i handle error here then it will handle the error above to its code and below code also run
+// .catch((err)=>console.log(err.message))      //If I handle error here then it will handle the error above to its code and below code also run
 .then(orderId => proceedToPayment(orderId))
 .then(orderId => showSummary(orderId))
 .then(orderId => walletUpdated(orderId))
-.catch((err)=>console.log(err.message)) //meassage is used to show error without red color and it simply log the error and it will handle error from the top of the code It will not handle below then code
+.catch((err)=>console.log(err.message)) //meassage is used to show error without red color and it simply log the error and it will handle error from the top of the code It will not handle error for below code
 .then(()=>{
     console.log("No matter what happnes, I will definitely be called!");
 })
@@ -478,8 +479,147 @@ function walletUpdated(orderId){
     console.log('Wallet updated for id: '+ orderId);
 }
 
+*/
 
 
+
+
+
+
+// async await
+/*
+----------------What is async?------------------
+--->1.Async is a keyword that is used before a function to create a async function.
+    2.By property of a async function. It will always return promise.
+    3.There are two things to know that
+        a.If we return promise manually then it will be fine and return a promise
+        b.But when we return a value then async will convert that value into promise and return a promise. That's why async always return a promise.
+    4.
+
+Ex: async function return a value
+*/
+// async function getData(){
+//     return "Async Promise"
+// }
+// const data1 = getData();
+// data1.then(res => console.log(res))
+
+
+// Ex: aysnc fucntion return a promise
+const p = new Promise((resolve)=>{
+    resolve('Async function return a promise')
+})
+
+async function getData(){
+    return p;
+}
+const data1 = getData();
+// data1.then(res => console.log(res))
+
+
+
+// -----------------using await with async-----------------------
+// ----> 1. async-await combo is used to handle promises.
+
+// How we handle promises before async await
+function getData1(){
+    p.then(res => console.log(res))
+}
+// getData1();
+
+// How to handle promises using async await
+async function handlePromise(){
+    const val = await p; //We can use await in front of promise and it will resolved the promise.
+    console.log(val);
+}
+// handlePromise();
+
+// ------------what is await?---------------
+// ---->1.await is a keyword that can only be used inside an async function.
+//      2.We can use await in front of promise and it will resolved the promoise
+
+
+
+// Differnce between async await and normal function using promise
+
+const promise = new Promise((resolve)=>{
+    setTimeout(()=>{
+        resolve('Promise is resolved')
+    },20000)
+})
+
+const promise2 = new Promise((resolve)=>{
+    setTimeout(()=>{
+        resolve('Promise2 is resolved')
+    },10000)
+})
+
+
+
+//-------------------- NOrmal fucntion---------------------
+function showOutput(){
+    // Browser will registed this call back funciton for seconds and then js engine store it into microtask queue  and when call stack is empty then it will execute and javascrip wait for nothing it will execute below all the code.
+    promise.then(res => console.log(res));
+    console.log("Namaster JavaScript");
+}
+// showOutput();
+
+
+//-------------------- Async await fucntion---------------------
+
+async function showOutput1(){
+    console.log("i'll Execute first");
+
+    // Js engine was waiting for promise to resolved
+    await promise.then(res => console.log(res));
+    console.log('Namaste Javscript');
+
+    //here it will not await for 5 second for each of the await code it will only  wait for 5 second for both the cases.
+    await promise2.then(res => console.log(res));
+    console.log('Namaste Javscript 2');
+}
+// showOutput1();
+
+// ----------------------What happens behind the scenes of async await-------------------------
+/*
+1. Initially, call stack is empty
+2.And then in call stack showOuput1 is in call stack and it print line by line
+3.and it waits for the promise to be resolved for a specific period of time and it will suspend the fucntion so that the call stack or mainthread will not blocked. Then after time is completed showOutput1 again coma back in call stack and resume executing where it left. Js engine track behind the scenes what is executed and what not.
+*/
+
+
+
+// -----------real world example of async await---------------------------
+
+// fetch api using async await
+
+const api_url = 'https://api.github.om/users/mouryasuraj'
+
+async function fetchData(){
+
+//     const data = await fetch(api_url)
+//     const jsonValue = await data.json()
+//    console.log(jsonValue);
+
+    //one way to handle error
+    // try {
+    //     const data = await fetch(api_url)
+    //     const jsonValue = await data.json()
+    //     console.log(jsonValue);
+    // } catch (error) {
+    //     console.log(error);
+    // }
+
+      
+}
+
+fetchData().catch(err => console.log(err)); //another way to handle error
+
+
+// Interview
+/*
+1.What is async-await
+*/
 
 
 
@@ -772,8 +912,8 @@ obj2.__proto__ = obj1
 // console.log(obj2.city);
 
 
-for (let i = 1; i <= 5; i++) {
-    setTimeout(() => {
-        console.log(i);
-    }, i * 1000);
-}
+// for (let i = 1; i <= 5; i++) {
+//     setTimeout(() => {
+//         console.log(i);
+//     }, i * 1000);
+// }
