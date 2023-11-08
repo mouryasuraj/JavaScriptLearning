@@ -494,7 +494,6 @@ function walletUpdated(orderId){
     3.There are two things to know that
         a.If we return promise manually then it will be fine and return a promise
         b.But when we return a value then async will convert that value into promise and return a promise. That's why async always return a promise.
-    4.
 
 Ex: async function return a value
 */
@@ -506,11 +505,11 @@ Ex: async function return a value
 
 
 // Ex: aysnc fucntion return a promise
-const p = new Promise((resolve)=>{
+const p = new Promise((resolve) => {
     resolve('Async function return a promise')
 })
 
-async function getData(){
+async function getData() {
     return p;
 }
 const data1 = getData();
@@ -522,13 +521,13 @@ const data1 = getData();
 // ----> 1. async-await combo is used to handle promises.
 
 // How we handle promises before async await
-function getData1(){
+function getData1() {
     p.then(res => console.log(res))
 }
 // getData1();
 
 // How to handle promises using async await
-async function handlePromise(){
+async function handlePromise() {
     const val = await p; //We can use await in front of promise and it will resolved the promise.
     console.log(val);
 }
@@ -542,23 +541,23 @@ async function handlePromise(){
 
 // Differnce between async await and normal function using promise
 
-const promise = new Promise((resolve)=>{
-    setTimeout(()=>{
+const promise = new Promise((resolve) => {
+    setTimeout(() => {
         resolve('Promise is resolved')
-    },20000)
+    }, 20000)
 })
 
-const promise2 = new Promise((resolve)=>{
-    setTimeout(()=>{
+const promise2 = new Promise((resolve) => {
+    setTimeout(() => {
         resolve('Promise2 is resolved')
-    },10000)
+    }, 10000)
 })
 
 
 
 //-------------------- NOrmal fucntion---------------------
-function showOutput(){
-    // Browser will registed this call back funciton for seconds and then js engine store it into microtask queue  and when call stack is empty then it will execute and javascrip wait for nothing it will execute below all the code.
+function showOutput() {
+    // Browser will registed this call back funciton for seconds and then js engine store it into microtask queue  and when call stack is empty then it will execute. javascrip wait for nothing it will execute below all the code.
     promise.then(res => console.log(res));
     console.log("Namaster JavaScript");
 }
@@ -567,14 +566,14 @@ function showOutput(){
 
 //-------------------- Async await fucntion---------------------
 
-async function showOutput1(){
+async function showOutput1() {
     console.log("i'll Execute first");
 
     // Js engine was waiting for promise to resolved
     await promise.then(res => console.log(res));
     console.log('Namaste Javscript');
 
-    //here it will not await for 5 second for each of the await code it will only  wait for 5 second for both the cases.
+    //here it will not await for 10 second for each of the await code it will only  wait for 5 second for both the cases.
     await promise2.then(res => console.log(res));
     console.log('Namaste Javscript 2');
 }
@@ -595,11 +594,11 @@ async function showOutput1(){
 
 const api_url = 'https://api.github.om/users/mouryasuraj'
 
-async function fetchData(){
+async function fetchData() {
 
-//     const data = await fetch(api_url)
-//     const jsonValue = await data.json()
-//    console.log(jsonValue);
+    //     const data = await fetch(api_url)
+    //     const jsonValue = await data.json()
+    //    console.log(jsonValue);
 
     //one way to handle error
     // try {
@@ -610,7 +609,7 @@ async function fetchData(){
     //     console.log(error);
     // }
 
-      
+
 }
 
 fetchData().catch(err => console.log(err)); //another way to handle error
@@ -622,6 +621,202 @@ fetchData().catch(err => console.log(err)); //another way to handle error
 */
 
 
+
+
+// promise api's and interview question on it.
+/*
+There are total 4 Promise API's
+
+1.Promise.all
+--->a.It is used to handle multiple promises together.
+    b.It takes array's of promises as an argument.
+    ex: Promise.all([p1,p2,p3]).
+    c.It returns an array of result from each of the promise passed as an argument.
+    d.For success case:
+        Suppose, we passed three promise p1,p2,p3 and it takes 3s,2s,1s repectively time to resolved the promise. Promise.all() wait for each of them to finish. And after 3s it will return an array of collected results.
+    e.For failure case:
+        Let's take above example, we pass three promise p1,p2,p3 and it takes 3s,1s,2s time respectively. And from one of these, suppose p2 is failure to resolved then immediately as soon as error happened Promise.all() will through an error as a result. It takes 1s to throw error because p2 takes 1s. 
+        Promise.all() is not wait for other promise.
+    f.So, if all promise is resolved then it will through an collection of result and it any one is failed then immediately it  will through an error.
+
+
+
+Suppose, our one promise is failed but we want other's promise to be fullfilled then we used Promise.allSettled()   
+2.Promise.allSettled
+--->a.It is same as Promise.all() but error handling is different from Promise.all()
+    b.Promise.all is not waiting for other promises to get fullfilled but Promise.allSettled() is wait for each of them to get settled and returns an array of value. If promise is fullfilled then it will return  a value and it it gets failed then it will through an error. but it always through an array of value.
+    c.If p2 get failed after 1s then Promise.allSettled wait for other's to get settled and then after 3s it return's an array.
+
+
+3.Promise.race()    
+--->a.It is same as Pomise.all() but a little differ from it.
+    b.It's like race, who wins first will get the first prize
+    c.Let's take above example, It will through value of the first settled promise. This was the sucess case.
+
+    Suppose we got our first promise failed
+    Then it will return the error whether the promise is sucess or failed. It will always return the value not a array.
+
+
+4.Promise.any()
+--->a.It will seeking for the first setteld resolved promise and return the value of that promise
+    b. What if first promise get failed?
+        Then it will ignore that promise and move to the next promise to get resolved the return the value
+    c. What if every promise is failed?
+        Then it will through array of aggregate error.
+
+NOTE: When it return more than one value then it will return a value in the form of array. Ex: Promise.all, Promise.allSEttled
+      And when it return a single value then it will return a value in parenthesis. Ex: Promise.race, Promise.any and if all the promise is failed in Promise.any and it will return aggregate error. ex: [err1, err2, err3]
+*/
+
+// Examples for All the four Promise API's
+// This is the dummy promises
+
+//Examples:  Promise.all
+
+// const p1 = new Promise((resolve, reject) => {
+//     // setTimeout(() => {
+//     //     resolve('P1 success')
+//     // }, 3000);
+//     setTimeout(() => {
+//         reject('P1 Failed')
+//     }, 3000);
+// })
+// const p2 = new Promise((resolve, reject) => {
+//     // setTimeout(() => {
+//     //     resolve('P2 success')
+//     // }, 1000);
+//     setTimeout(() => {
+//         reject('P2 Failed')
+//     }, 1000);
+// })
+// const p3 = new Promise((resolve, reject) => {
+//     // setTimeout(() => {
+//     //     resolve('P3 success')
+//     // }, 2000);
+//     setTimeout(() => {
+//         reject('P3 Failed')
+//     }, 1000);
+// })
+
+// Promise.all([p1, p2, p3]).then((res) => {
+//     console.log(res);
+// })
+// .catch(err => console.error(err))
+
+
+
+
+//  Examples : Promise.allSettled --> It will return an array of object which has two keys (reason, status or value, status)
+
+// const p1 = new Promise((resolve, reject) => {
+//     // setTimeout(() => {
+//     //     resolve('P1 success')
+//     // }, 3000);
+//     setTimeout(() => {
+//         reject('P1 Failed')
+//     }, 3000);
+// })
+// const p2 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve('P2 success')
+//     }, 1000);
+//     // setTimeout(() => {
+//     //     reject('P2 Failed')
+//     // }, 1000);
+// })
+// const p3 = new Promise((resolve, reject) => {
+//     // setTimeout(() => {
+//     //     resolve('P3 success')
+//     // }, 2000);
+//     setTimeout(() => {
+//         reject('P3 Failed')
+//     }, 1000);
+// })
+
+// Promise.allSettled([p1, p2, p3]).then((res) => {
+//     console.log(res);
+// })
+// .catch(err => console.error(err))
+
+
+
+
+// Examples: Promise.race
+
+// const p1 = new Promise((resolve, reject) => {
+//     // setTimeout(() => {
+//     //     resolve('P1 success')
+//     // }, 3000);
+//     setTimeout(() => {
+//         reject('P1 Failed')
+//     }, 3000);
+// })
+// const p2 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve('P2 success')
+//     }, 1000);
+//     // setTimeout(() => {
+//     //     reject('P2 Failed')
+//     // }, 1000);
+// })
+// const p3 = new Promise((resolve, reject) => {
+//     // setTimeout(() => {
+//     //     resolve('P3 success')
+//     // }, 2000);
+//     setTimeout(() => {
+//         reject('P3 Failed')
+//     }, 2000);
+// })
+
+// Promise.race([p1, p2, p3]).then((res) => {
+//     console.log(res);
+// })
+// .catch(err => console.error(err))
+
+
+
+
+
+// Examples: Promise.any ---> It will through aggregate error.
+
+const p1 = new Promise((resolve, reject) => {
+    // setTimeout(() => {
+    //     resolve('P1 success')
+    // }, 3000);
+    setTimeout(() => {
+        reject('P1 Failed')
+    }, 3000);
+})
+const p2 = new Promise((resolve, reject) => {
+    // setTimeout(() => {
+    //     resolve('P2 success')
+    // }, 4000);
+    setTimeout(() => {
+        reject('P2 Failed')
+    }, 1000);
+})
+const p3 = new Promise((resolve, reject) => {
+    // setTimeout(() => {
+    //     resolve('P3 success')
+    // }, 1000);
+    setTimeout(() => {
+        reject('P3 Failed')
+    }, 2000);
+})
+
+Promise.any([p1, p2, p3]).then((res) => {
+    console.log(res);
+})
+.catch(err => {
+    console.log(err.errors); //It is used to show all the errors in the array. It is aggregated error.
+})
+
+
+// NOTE: Settled means whether a promise will be 
+    // resolve or reject
+    // success or failure
+    //fullfilled or rejected
+    // To get the aggregate error we need to do console.log(err.errors) in catch
 
 
 
