@@ -1,3 +1,176 @@
+// Interview Preparation for frontend developer---> https://www.hellojavascript.info/docs/general-javscript-questions
+/*
+--------------------------Script tag------------------------------
+    1.Used: Script tag in html is used to include javascript code within an html document, allowing it to interact with and modify the content of a page.
+    2.used in html: Script tag is used in html to include javascripot code in a web page. It can be used to define inline js or to reference external js files.
+    3.Differnce in inline and external js: 
+        a.Inline javascript defined directly with an html document using the script tag.
+        b.while external js is contained is a separate file that is referenced using script tag and put the path of external js file in the 'src' attribute in script tag.
+        c.External js is the preferred way to attach js because it can be cached by the browser and reused across multiple pages.
+    4.With the help of src attribute in script tag we can attach external js file in html document.
+    5.The script tag can be included in head or body section of an html document. It is generally recommended to include script at the end of the body section to avoid blocking the rendering of the page.
+    6.defer: 
+        1.defer attribute on a script tag indicates that scipt should be executed after the page has finished parsing.
+        2.This can improve the performance of page loading.
+    7.async: 
+        1.async attribute on a script tag indicates that script should be executed asynchronously, meaning it will not block the rendering of the page.
+        2.This can be particularly useful for improving the page loading performance.
+
+
+
+
+
+
+
+-----------------use strict----------------------
+
+NOte: Sometimes you'll see the defualt, non-strict mode referred to as sloppy mode. This isn't an official term, but be aware of it, just in case.
+
+    1.In javascript, strict mode is a feature introduced in ES5 to enhance the language by catching common coding errors.
+    2.When strict mode is enabled, the interpreter is more strict in parsing and executing code.
+    3.To enable strict mode, add this line at the beginning of script or a function:
+                "use strict"
+    4.Features:     
+            1.Variables must be declared with var, let and const before being used.
+            2.Assigning value to an undeclared variable, deleting variables, and read only properties results in errors.
+            3.'this' is undefined in fucntions that are not methods or constructors.
+
+
+-------------------let, const and var-------------------
+
+var:
+    1.Function scopeed: Variables declared with var are only scoped to the function they are declared in. If declared outside any function, they have global scope.
+    2.Can be redeclared and reassigned.
+        Ex: var a = 5;
+            var a = 10; //this is allowed
+        
+let: 
+    1.Block-scoped: Varibles declared with let are scoped to the block, statement, or experssion where they are used.
+    2.Cannot be redeclared within the same scope but can be re-assigned
+        Ex: let y = 15;
+            y = 20;
+
+const:
+    1.Blocked scoped: similar to let, const is block scoped.
+    2.Must be initialized at the time of declaration and cannot be reassigned.
+        Ex: const a = 45;
+            a = 50; //This is not allowed. It would result in an error.
+
+Things learned:
+    1. let and const are hoisted but its memory is allocated at other place than window which cannot be accessed before initialisation.
+    2. Temporal Dead Zone exists until variable is declared and assigned a value.
+    3. window.variable OR this.variable will not give value of variable defined using let or const.
+    4. We cannot redeclare the same variable with let/const(even with using var the second time).
+    5. const variable declaration and initialisation must be done on the same line.
+    6. There are three types of error: 
+            [1] referenceError {given where variable does not have memory allocation} 
+            [2] typeError {given when we change type that is not supposed to be changed} 
+            [3] syntaxError {when proper syntax(way of writing a statement) is not used}.
+    7. Use const wherever possible followed by let, Use var as little as possible(only if you have to). It helps avoid error.
+    8. Initialising variables at the top is good idea, helps shrinks TDZ to zero.
+
+---------------hoisting----------------------------
+    1.Hoisting in javascript is a behaviour where variable and function declarations are moved to the top of their scope during the compilation phase, before the code is executed. This means that we can used variables and funcions before they are declared in the scope.
+    2.Two main aspects of hoisting:
+        1.Variable hoisting:
+            a.When a variable is declared with var, the declaration is hoisted to the top of the scope, but the assignmemt remains in place
+            b.Ex: console.log(x);  //undefined
+                  var x = 5;
+                  console.log(x); // 5
+            c.In the first console.log, 'x' is hoisted and declared but not assigned value yet, so it's 'undefined'.
+            d.It's important to note that hoisting works differently for variable declared with var compared to let and const.
+            e.Varribles declared with let and const are hoisted to their scope but are not initialized until the actual declaration in encountered in the code. This is known as 'Temporal Dead Zone.'
+        2.Function hoisting:
+            a.Function declaration are hoisted to the top of their containing scope.
+            b.Ex: foo();
+                  function foo(){
+                    console.log('Hello, hoisted function')
+                  }
+            c.foo() is hoisted and it can be called before its actual declaration in the code.
+
+
+--------------Temporal Dead Zone-------------------
+
+    1.A Temporal Dead Zone is a block where variables are inaccessbile until the computer initialize it with a value.
+    2.The tempotal dead zone is a concept in javascript that refers to the period between entering a scope and the actualdeclaration of a variable. During this period accessing the variable results in a 'referenceError'.
+    3.Ex: console.log(x) // referenceError
+          let x = 5;
+    4.In the above example, reference 'x' before its declaration is within the temporal dead zone leading to a ReferenceError.
+
+
+
+---------------Data Types---------------------------
+    1.There are 8 types available in javscript: Number, Null, string, Symbol, undefined, boolean, bigInt, object
+                  1.The first seven in the above types are primitive data types which can hold only on item that is 'string' or 'number'.
+                  2.Object can hold date set and more complex things. It is non-primitive data type.
+                  3.Primitive data types are pass by value. This means that these data types gives a copy of variable, and it doesn't affect the original variable
+                  4.Non-primitive data types like array and object are pass by reference. This means that if we give a reference of a varible then it will affect the original one if anything changed to that variable.
+    2.'typeof' operator:
+                  1.It is used to identify the type of a specific value or argument.
+                  2.It returns a string indicating the type of the operand.
+                  3.Javascripot supports two forms syntax of it:
+                        a.operator: typeof x
+                        b.fucntion: typeof(x);
+    3.The number type represent numeric data, including integers and floating-point numbers.It also support special numeric values such as infinity and NaN.
+                  Ex: let myInt = 45;   console.log(typeof myInt) //number
+                      let myInt2 = 411.2; console.log(typeof myInt2) //number
+    4.The 'number' type cannot represent number values greater than (2^23 - 1) and less that -(2^23 - 1) for negative, and anythign beyound these range considered as bigInt
+                  Ex:let num = 0.1 + 0.3
+                     console.log(num) // 0.30000000000000004
+                  To avoid this isseu js have toFixed() method
+                     console.log(num.toFixed(2)) // 0.30
+    5.we can create bigInt by puting 'n' to the integer literal or by calling BigInt constructor
+    6.There are three ways to create a string representation of a value:
+                  1.Using double quotes(" ")
+                  2.Using single quotes(' ')
+                  3.Using backticks(` `). Backticks have additional feature that allows you to embed expressions and special characters directly in a string using template literals(` `) by surrounding then with ${...}. We can write multi line string in template literal.
+                    ex: let templateLiterls = `HI, I am ${name}`
+    7.The boolean logical type in js has two values: 
+                  1.true
+                  2.false
+            a.It is commonly used for conditional statement, loops and comparisons in programming
+            b.It is used to control the flow of program using conditional statements.
+    8.Null is a unique value that represent "nothing", "empty" or "value unknown" but not equal to undefined.
+    9.Undefined: 
+            1.It is a datatype represent a variable or object that has beed delclared but not assigned a value, or a fucntion that has no return value.
+            2.Technically, it is possible to explicitly assigned undefined to a variable but it is not recommended.
+    10.typeof x acts as an operator, and typeof(x) is a function, but they work with or without parathesis. The result is the same.
+    11.typeof operator return's a string with the name of type, like 'number' if it is a number or 'function' if it is a function.
+    12.a. null and undefined are two distinct data types that represent different types of non-values.
+       b. undefined represent a value that has not been declared or has not yet been assigned a value, while null represent a delibrate absence of a value. 
+       NOte: typeof undefined returns undefined but typeof null return 'object', which is a quirk in the language design that cannot be fixed for backward compatibility reasons.
+    13.NaN is stand for "Not a Number". It is a special value that represents the result of an invalid or undefined mathematical operation.
+    14.bigInt is a datatype that represent integer of arbitrary length, allowing for precies calculations beyond the limitations of number data type.
+    15.Primitive is a basic data type that represent a single value, while an object is a complex stucture that represent a collection of key value pairs
+    16.The main differnce between primitive data type and object data types is that primitive data types are immutable and object are mutable. Primitive's are pass by value and object's are pass by reference.
+
+    
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Functions in JS are first-class Citizens, 
 // what does that mean? 
 // What is the difference between Function Statements and Function Expressions? 
