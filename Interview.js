@@ -104,7 +104,7 @@ Things learned:
                   1.The first seven in the above types are primitive data types which can hold only on item that is 'string' or 'number'.
                   2.Object can hold date set and more complex things. It is non-primitive data type.
                   3.Primitive data types are pass by value. This means that these data types gives a copy of variable, and it doesn't affect the original variable
-                  4.Non-primitive data types like array and object are pass by reference. This means that if we give a reference of a varible then it will affect the original one if anything changed to that variable.
+                  4.Non-primitive data types like array and object are pass by reference. This means that if we give a reference of a variable then it will affect the original one if anything changed to that variable.
     2.'typeof' operator:
                   1.It is used to identify the type of a specific value or argument.
                   2.It returns a string indicating the type of the operand.
@@ -114,10 +114,10 @@ Things learned:
     3.The number type represent numeric data, including integers and floating-point numbers.It also support special numeric values such as infinity and NaN.
                   Ex: let myInt = 45;   console.log(typeof myInt) //number
                       let myInt2 = 411.2; console.log(typeof myInt2) //number
-    4.The 'number' type cannot represent number values greater than (2^23 - 1) and less that -(2^23 - 1) for negative, and anythign beyound these range considered as bigInt
+    4.The 'number' type cannot represent number values greater than (2^23 - 1) and less that -(2^23 - 1) for negative, and anything beyound these range considered as bigInt
                   Ex:let num = 0.1 + 0.3
                      console.log(num) // 0.30000000000000004
-                  To avoid this isseu js have toFixed() method
+                  To avoid this issue js have toFixed() method
                      console.log(num.toFixed(2)) // 0.30
     5.we can create bigInt by puting 'n' to the integer literal or by calling BigInt constructor
     6.There are three ways to create a string representation of a value:
@@ -132,7 +132,7 @@ Things learned:
             b.It is used to control the flow of program using conditional statements.
     8.Null is a unique value that represent "nothing", "empty" or "value unknown" but not equal to undefined.
     9.Undefined: 
-            1.It is a datatype represent a variable or object that has beed delclared but not assigned a value, or a fucntion that has no return value.
+            1.It is a datatype represent a variable or object that has beed delclared but not assigned a value, or a function that has no return value.
             2.Technically, it is possible to explicitly assigned undefined to a variable but it is not recommended.
     10.typeof x acts as an operator, and typeof(x) is a function, but they work with or without parathesis. The result is the same.
     11.typeof operator return's a string with the name of type, like 'number' if it is a number or 'function' if it is a function.

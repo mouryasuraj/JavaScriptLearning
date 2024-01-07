@@ -1,5 +1,5 @@
 // Strings----------------------
-const name = "Suraj-M"; //This is way to declare string
+const name = "Suraj-M"; //This is a way to declare string
 const repocount = 50;
 
 //``--> Back ticks:  
