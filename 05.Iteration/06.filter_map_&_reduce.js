@@ -91,10 +91,10 @@ const books = [
 // normal function
 // const myNums = [1,2,3];
 // // let initialValue = 1;
-// const newNum = myNums.reduce(function(acc, currVal){
-//     console.log(`Accu: ${acc} and currVal:${currVal}`);
-//     return acc + currVal;
-// },1)
+const newNum = myNums.reduce(function(acc, currVal){
+    console.log(`Accu: ${acc} and currVal:${currVal}`);
+    return acc + currVal;
+},1)
 // console.log(newNum);
 
 

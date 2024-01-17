@@ -15,7 +15,7 @@
 // user.username = "mourya"
 // user.welcomeMessage()
 // console.log(this); //output = {}
-//Note: If we run console.log(this) in browser then this refer to windows object and if we run in node.js then it will refer to empty object
+//Note: If we run console.log(this) in browser then "this" refer to windows object and if we run in node.js then it will refer to empty object
 
 
 // this keyword in function
@@ -27,7 +27,7 @@
 // chai();
 // function chai(){
 //   let name = 'suraj'
-//     console.log(this.name);//It will return undefined values because this. will only access object
+//     console.log(this.name);//It will return undefined values because "this". will only access object
 // }
 // chai();
 
@@ -54,14 +54,14 @@
 // }
 // console.log(addTwo(3,4));
 
-// Concise body syntax, Implicit return
+//------------- Concise body syntax, Implicit return
 // const addTwo = (num1, num2) => num1 + num2;
 // const addTwo = (num1, num2) => (num1 + num2);
 
 // const sum = () => 'suraj';
 // console.log(sum());
 
-// block body syntax, Expilcit return
+// --------------block body syntax, Expilcit return
 //  const addTwo = (num1, num2) => { 
 //     return num1 + num2
 // };

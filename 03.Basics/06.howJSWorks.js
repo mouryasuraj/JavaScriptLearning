@@ -19,7 +19,7 @@ Execution context has two component
 
 Summary:
 JavaScript is a synchronous single-threaded language.
-Single threaded means that JavaScript can execute once command at a time.
+Single threaded means that JavaScript can execute one command at a time.
 Synchronous single-threaded means that JavaScript can execute once command at a time in a specific order.
 */
 
@@ -84,7 +84,7 @@ Here, Interesting things happen that if function is invoked then javascript will
                     2.ans = num * num ///It will execute in code execution phase and replce the value of undefined with value of ans
                     ans:4
 
-                    3.return ans   //return means that you work is done with this function. Now return the control of the program, to the place where this function was invoked
+                    3.return ans   //return means that your work is done with this function. Now return the control of the program, to the place where this function was invoked
                     return 4;
     
 
@@ -93,7 +93,7 @@ Note: After returning the value the whole execution context for that function wi
 5.square2:4
 then it will move to next line which is line no 6
 
-6. sqaure4:sqaure(4) //NOw again here function sqaure(4) is invoked.Again JavaScript create global execution context for function in Code executin phase and again it will go through memmory creation and code execution phase.
+6. sqaure4:sqaure(4) //NOw again here function sqaure(4) is invoked.Again JavaScript create  execution context for function in Code executin phase and again it will go through memmory creation and code execution phase.
 
 ans = num * num  //Here argument is passed 4, so we can directly take argument num = 4
 ans: 4 * 4  

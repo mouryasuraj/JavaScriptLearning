@@ -12,7 +12,7 @@ if(true){
 }
 // console.log(a) //we can't access the value of a because a is declared with let and it has local scope
 // console.log(b) //we can't access the value of b because b is declared with const and it has local scope
-// console.log(c) //we can access the value of c because c is declared with var and it has global scope. so, that's why today's date no one declare variable with var
+// console.log(c) //we can access the value of c because c is declared with var and it has global scope. so, that's why now a day's no one declare variable with var
 let a = 20;
 const b = 30;
 if(true){
@@ -28,13 +28,13 @@ console.log(b);
 
 // scope means that where we can access a specific varaible in our code
 
-// Note: whenever the an execution context is created a lexical environment also created
+// Note: whenever an execution context is created a lexical environment also created
 
 // lexical environment is the local memory along with lexical enrvironment of its parent memory;
 
 
 // the scope chain
-// scope chain: when lexical environment local memory won't find a variable then it will go to its parent lexical environment and again it won't find then it will goto its parent environment(global) it is called as scope chain
+// scope chain: when lexical environment local memory won't find a variable then it will go to its parent lexical environment and again if it won't find then it will goto its parent environment(global) it is called as scope chain
 
 
 
@@ -67,7 +67,7 @@ if(true){
     let b=20;
     const c=30;
 }
-here in above code b,c have block scope and a have global scope . Run above code in browser and check
+here in above code "b","c" has block scope and "a" has global scope . Run above code in browser and check
 {
     var a=10;
     let b=20;
@@ -106,7 +106,7 @@ let b=100;
     console.log(b) //20
     console.log(c) //30
 }
-console.log(b) //100 because inside the {} a has block scope and both memory a refer to different scope. Outside variable a refer to script and inside the block the a variable refer to block scope
+console.log(b) //100 because inside the {} "a" has block scope and both memory a refer to different scope. Outside variable "a" refer to script and inside the block  "a" variable refer to block scope
 Note: If let or const declare in global environment the its memory is in script space but when its declare in block the it have block scope
 
 

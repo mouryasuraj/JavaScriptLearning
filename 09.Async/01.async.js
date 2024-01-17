@@ -6,7 +6,7 @@
 
 /* 
 Execution context   note:each operation waits for the last one to complete before execution
-    --->Execute one line of code at a time
+    --->Execute one line of code run at a time
     -
     ---->console.log()==>1
     -

@@ -5,7 +5,7 @@ const myArr = [10, 5, 2, 8, 12, 15];
 myArr.push(6); //it will add the element to the end of the array
 myArr.pop();//It will remove the last element from the array
 myArr.unshift(9); //it will add the element at the starting of the array
-myArr.shift(); //it will add the element at the end of the array
+myArr.shift(); //it will remove the element from the starting point for the array.
 // console.log(myArr.includes(0));//false
 // console.log(myArr.indexOf(0));//10
 
@@ -17,9 +17,9 @@ const newArr = myArr.join('-');// Adds all the elements of an array into a strin
 // Slice and splice
 
 // console.log("A " + myArr);
-// console.log(myArr.slice(1, 3));
+console.log(myArr.slice(1, 3));
 // console.log("B " + myArr);
-// console.log(myArr.splice(1, 3));
+console.log(myArr.splice(1, 5));
 // console.log("C " + myArr);
 
 const marvel_heros = ['thor', 'Ironman', 'spiderman']
@@ -40,12 +40,12 @@ console.log(another_arr.reverse());
 
 // console.log(Array.isArray('Suraj'))//false
 // console.log(Array.isArray(['Suraj']))//false
-// console.log(Array.from('Suraj'))//['S','u','r','a','j']
+console.log(Array.from('Suraj'))//['S','u','r','a','j']
 // console.log(Array.from({name:'Suraj'}))//Interesting. It will return an empty array because it did not know whow to make array key or value
 let score1 = 100;
 let score2 = 200;
 let score3 = 300;
-// console.log(Array.of(score1, score2, score3))// It will return an array from set of elements
+console.log(Array.of(score1, score2, score3))// It will return an array from set of elements
 
 // Fill Mehtod in Array
 let arr = [4, 5, 6, 7]
@@ -56,11 +56,11 @@ let arr = [4, 5, 6, 7]
 // console.log(arr.fill(2, 2, 4)); //4522
 // console.log(arr.fill(4, -3, -2)); // [4, 4, 6, 7]
 
-// let arr1 = Array(3).fill({})
-// arr1[0].first = 'hi1';
-// arr1[1].second = 'hi2';
-// arr1[2].third = 'hi3';
-// console.log(arr1);
+let arr1 = Array(3).fill({})
+arr1[0].first = 'hi1';
+arr1[1].second = 'hi2';
+arr1[2].third = 'hi3';
+console.log(arr1);
 
 // Filter
 const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];

@@ -24,8 +24,8 @@
 // console.log(money.toLocaleString());
 
 let preceision = 100.5587
-// console.log(preceision.toPrecision(3));
-// console.log(preceision.toString().length);
+console.log(preceision.toPrecision(3));
+console.log(preceision.toString().length);
 
 // Math----------------------------------------------
 
@@ -39,12 +39,12 @@ let val = 45
 // console.log(Math.floor(45.56)); ///45
 // console.log(Math.max(45, 46, 47, 48, 49));  //49
 // console.log(Math.min(45, 46, 47, 48, 49));  //45
-// console.log(Math.pow(7,2));
+// console.log(Math.pow(7,2));  //49
 
 
 // console.log(Math.random());//between 0 to 1 but having decimal
 // console.log(Math.random() * 10 + 1); //between 0 to 10 but having decimal
-// console.log(Math.floor((Math.random() * 10 + 1))); //between 0 to 9 NOt haveing Decimal
+// console.log(Math.floor((Math.random() * 10 + 1))); //between 0 to 10 NOt haveing Decimal
 
 
 // Suppose you want value in a particular range

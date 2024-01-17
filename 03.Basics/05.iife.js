@@ -21,7 +21,7 @@ console.log("ARROW FUNCTION");
 (function chai(){
     console.log("NAMES FUNCTION")
 })();
-// Note: if you are making more than one IIFE then you must check that you have put the ; or not. bcoz if you are not put ; then next IIFE will not call and it will give a type error: (intermediate value(...) is not a function);
+// Note: if you are making more than one IIFE then you must check that you have put the ; or not. bcoz if you not put ; then next IIFE will not call and it will give a type error: (intermediate value(...) is not a function);
 
 // Async 
 (async() =>{

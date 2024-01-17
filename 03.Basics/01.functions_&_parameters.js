@@ -64,7 +64,7 @@
 // console.log(calculateCartPrice(2, 500, 300, 400));//return array[2,500,300,400]
 
 
-
+// Note: All higher order function involves first class function but not all first class fucntion involves higher order funciton.
 
 
 // pass object as a parameter in function

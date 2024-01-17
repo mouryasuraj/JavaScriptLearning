@@ -5,7 +5,7 @@
 // if(userEmail){
 //     console.log('Got user email');
 // }else{
-//     console.log("Dont't have use email");
+//     console.log("Dont't have user email");
 // }
 
 
@@ -16,7 +16,7 @@
 
 // truthy value
 
-// true, "0", 'false', " "(space), [], {}, function(){};
+// true, "1", 'false', " "(space), [], {}, function(){};
 
 
 

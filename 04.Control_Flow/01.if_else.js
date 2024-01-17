@@ -1,7 +1,7 @@
 // Conditional structure or if...else
 
 // syntax
-// if(conditions){ /// If conditions==true the it will go inside 'if' block else it will will go in 'else' block
+// if(conditions){ /// If conditions==true the it will go inside 'if' block else it will  go in 'else' block
 
 // }
 // else{

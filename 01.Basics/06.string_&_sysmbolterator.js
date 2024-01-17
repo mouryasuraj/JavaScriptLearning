@@ -86,7 +86,7 @@ console.log(i.next());
 // console.log(str.charAt(undefined));
 let anotherStr = "is a Programmer."
 // console.log(str.concat(' '+anotherStr));
-// console.log(str.concat(", ", anotherStr));
+console.log(str.concat(", ", anotherStr));
 // console.log(anotherStr.endsWith('.')); //true
 // console.log(anotherStr.endsWith('Programmer.', 16));// true
 // console.log(anotherStr.endsWith('Programmer')); //false

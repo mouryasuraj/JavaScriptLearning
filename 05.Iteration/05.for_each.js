@@ -15,7 +15,7 @@ const coding = ['js', 'java', 'python'
 
 
 
-// Here, we have pass a function printMe() as a parameter in forEach loop
+// Here, we pass a function printMe() as a parameter in forEach loop
 function printMe(item){
     // console.log(item);
 }

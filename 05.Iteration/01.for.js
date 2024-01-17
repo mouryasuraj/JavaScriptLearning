@@ -11,7 +11,7 @@
 //     console.log(element);
 // }
 
-// console.log(element) //we cannot access variable element because varialble element is declared in for loop and it is a block scope 
+// console.log(element) //we cannot access variable element because variable element is declared in for loop and it is a block scope 
 
 
 

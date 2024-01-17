@@ -231,6 +231,7 @@ f(1, 2); //The value which we passed inside a function at the time of invoking a
 // -->Fucntion that return another anonymous or named function is also called first class functon
 // -->The ability to used function as a value is known as first class function
 
+
 // Ex:
 let q = function () {
     return function () {
@@ -251,7 +252,7 @@ r(function () {
 
 // Asynchronous javascript and event loop
 
-// FIrst, javascript engine create global execution context and the run the code one line at a time
+// FIrst, javascript engine create global execution context and then run the code one line at a time
 // For setTimeout , DOmAPI and other api's in browser will go through task queue(call back queue) but Promises and Mutation observation will go through micro task Queue and micro task queue have high priority. So, when call stack is empty our event loop check that call stack is empty  and it take's function from micro task queue instead of taking callback's from task queue because micro task have high priority.
 
 
@@ -437,6 +438,8 @@ function sum(arr) {
 
 // Use reduce method to find the sum of the element
 const output3 = arr2.reduce((acc, curr) => {
+    // acc = acc + curr
+    // return acc
     return acc + curr
 }, 0)
 // console.log(output3);

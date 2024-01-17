@@ -5,7 +5,7 @@
 //         console.log(username);
 //     }
 
-//     // console.log(website);//we cannot access child variable into parent because  variable 'website' is defined in function two() and we cannot access its variable outside of the function. This called as Closures.
+//     // console.log(website);//we cannot access child variable into parent because  variable 'website' is defined in function two() and we cannot access its variable outside of the function. This is called as Closures.
 
 //     two()
 // }
@@ -30,7 +30,7 @@
 
 // Basic Function
 // console.log(addone(5)) //Output 6 because if function is only declared not assigned then hoiting  will be in used
-// Hoising refer to the process whereby by intepreter appears to move the declaraion of functions, variables, classess, or imports to the top of their scopes, prior to execution of the code.
+// Hoising refer to the process whereby intepreter appears to move the declaraion of functions, variables, classess, or imports to the top of their scopes, prior to execution of the code.
 
 function addone(num) {
     return num + 1;
