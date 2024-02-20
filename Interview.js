@@ -590,6 +590,7 @@ promise.then(function(orderId){
 //     })
 //     return pr;
 // }
+
 // function validateCart(cart){
 //     return false;
 // }
@@ -811,16 +812,16 @@ There are total 4 Promise API's
     d.For success case:
         Suppose, we passed three promise p1,p2,p3 and it takes 3s,2s,1s repectively time to resolved the promise. Promise.all() wait for each of them to finish. And after 3s it will return an array of collected results.
     e.For failure case:
-        Let's take above example, we pass three promise p1,p2,p3 and it takes 3s,1s,2s time respectively. And from one of these, suppose p2 is failure to resolved then immediately as soon as error happened Promise.all() will through an error as a result. It takes 1s to throw error because p2 takes 1s. 
+        Let's take above example, we had pass three promises p1,p2,p3 and it takes 3s,1s,2s  respectively. And from one of these, suppose p2 is fail to resolved, then immediately as soon as error occured Promise.all() will through an error as a result. It takes 1s to throw an error because p2 takes 1s. 
         Promise.all() is not wait for other promise.
-    f.So, if all promise is resolved then it will through an collection of result and it any one is failed then immediately it  will through an error.
+    f.So, if all promise is resolved then it will through an collection of result and if any one is failed then immediately it  will through an error.
 
 
 
 Suppose, our one promise is failed but we want other's promise to be fullfilled then we used Promise.allSettled()   
 2.Promise.allSettled
 --->a.It is same as Promise.all() but error handling is different from Promise.all()
-    b.Promise.all is not waiting for other promises to get fullfilled but Promise.allSettled() is wait for each of them to get settled and returns an array of value. If promise is fullfilled then it will return  a value and it it gets failed then it will through an error. but it always through an array of value.
+    b.Promise.all is not waiting for other promises to get fullfilled but Promise.allSettled() will wait for each of them to get settled and returns an array of value. If promise is fullfilled then it will return  a value and if it gets failed then it will through an error. but it always through an array of value.
     c.If p2 get failed after 1s then Promise.allSettled wait for other's to get settled and then after 3s it return's an array.
 
 
@@ -983,16 +984,16 @@ const p3 = new Promise((resolve, reject) => {
 Promise.any([p1, p2, p3]).then((res) => {
     console.log(res);
 })
-.catch(err => {
-    console.log(err.errors); //It is used to show all the errors in the array. It is aggregated error.
-})
+    .catch(err => {
+        console.log(err.errors); //It is used to show all the errors in the array. It is aggregated error.
+    })
 
 
 // NOTE: Settled means whether a promise will be 
-    // resolve or reject
-    // success or failure
-    //fullfilled or rejected
-    // To get the aggregate error we need to do console.log(err.errors) in catch
+// resolve or reject
+// success or failure
+//fullfilled or rejected
+// To get the aggregate error we need to do console.log(err.errors) in catch
 
 
 
@@ -1288,3 +1289,5 @@ obj2.__proto__ = obj1
 //         console.log(i);
 //     }, i * 1000);
 // }
+
+
