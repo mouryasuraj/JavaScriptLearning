@@ -37,10 +37,10 @@ console.log(typeof num);
 // const bigNumber = 45465454564646n;
 // console.log(typeof bigNumber); // bigint
 
-
+Functions
 // #Non primitive or reference type
 
-// Array, Objects, Functions
+// Array, Objects, 
 
 // const heors = ["shaktiman", "naagraj", "doga", 44, false, 1.05]
 // const obj = {

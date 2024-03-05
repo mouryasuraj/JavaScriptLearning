@@ -2,7 +2,7 @@
 
 //Number ------------------------------
 
-// let score = "33"; //"33abc" ==>NaN, null===>0, undefined==>NaN, true==>1
+// let score = "33"; //"33abc" ==>NaN, null==>0, undefined==>NaN, true==>1
 // console.log(typeof score);
 // let anotherScore = "33";
 // console.log(typeof(anotherScore));

@@ -107,7 +107,7 @@ let b=100;
     console.log(c) //30
 }
 console.log(b) //100 because inside the {} "a" has block scope and both memory a refer to different scope. Outside variable "a" refer to script and inside the block  "a" variable refer to block scope
-Note: If let or const declare in global environment the its memory is in script space but when its declare in block the it have block scope
+Note: If let or const declare in global environment then its memory is in script space but when its declare in block then it have block scope
 
 
 

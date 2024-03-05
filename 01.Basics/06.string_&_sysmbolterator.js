@@ -8,7 +8,7 @@ const repocount = 50;
 // another way to declare string
 const anotherWay = new String('Suraj')
 console.log(anotherWay);//It will give an object
-console.log(anotherWay['2']); //Output = S
+console.log(anotherWay['2']); //Output = r
 // console.log(anotherWay.__proto__); // return object
 // console.log(anotherWay.length); //Length is a property of String
 // console.log(anotherWay.toUpperCase()); // SURAJ

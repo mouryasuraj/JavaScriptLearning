@@ -58,3 +58,5 @@ let val = 45
 // let max = 80;
 
 // console.log(Math.floor((Math.random() * (max - min + 1)) + min));
+
+

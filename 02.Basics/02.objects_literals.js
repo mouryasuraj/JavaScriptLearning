@@ -1,7 +1,6 @@
 // Objects--------------------------------------------------------------------------
 
-// Singleton
-// Object.create -->through Construtor method
+// Singleton--> Object.create -->through Construtor method
 
 // object literals
 let mySymbol = Symbol();

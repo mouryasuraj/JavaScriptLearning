@@ -35,8 +35,8 @@ link:https://www.freecodecamp.org/news/how-javascript-works-behind-the-scene-jav
 
 Execution 
 
-Everthing Happens in Global Exection Context, So first It will create Global Exection Context. In Global Exectuon Context Two phase are there: 
-1.Memory Creation Phase 
+Everthing Happens in Global Exection Context, So first It will create Global Exection Context. In Global Exection Context Two phase are there: 
+1. Memory Creation Phase 
 2. Code Execution Phase
 
 Global Exection Context
@@ -44,10 +44,10 @@ Global Exection Context
 1.Memory Creation Phase: In this phase javascript runs through the program and allocate memory to all the variables and functions
 
 // Code for examples
-1.var n=2;
+1.var n==>2;
 2.function sqaure(num){
 3.    let ans= num * num;
-      return ans;
+    return ans;
 4.}
 5.var sqaure2 = sqaure(2);
 6.var sqaure4 = sqaure(4);
@@ -61,7 +61,7 @@ Lets take an example of above code
 
 
 
-2.Code Exection Phase:After memory creation phase, it will runs once again thorugh whole js program line by line  and execute the code now.
+2.Code Exection Phase:After memory creation phase, it will run once again through whole js program line by line  and execute the code now.
 
 now, value of n=2, It will replaced the value of undefined to 2
 1.n:2
@@ -71,7 +71,7 @@ Here, Interesting things happen that if function is invoked then javascript will
 
 2.                    1.Memory Phase for 
                     1.function sqaure(num){
-                    2.    let ans = return num * num
+                    2.    let ans = num * num
                     3.     return ans;
                     4.}
                     num: undefined    //it allocates memory for parameters also
@@ -79,7 +79,7 @@ Here, Interesting things happen that if function is invoked then javascript will
 
                     2.Code execution Phase
 
-                    num:2  //Undefined will be replaced by 2. Because in function sqaure(num) num is a parameter and sqaure(n) 1.n is an argument where function invoked and the value of n = 2 which is defined in the program
+                    num:2  //Undefined will be replaced by 2. Because in function sqaure(num) num is a parameter and sqaure(n) 1.n is an argument where function invoked and the value of n = 2 which is defined in the programe
 
                     2.ans = num * num ///It will execute in code execution phase and replce the value of undefined with value of ans
                     ans:4
@@ -107,7 +107,7 @@ Now, nothing is remaining to execute. So javascript will delete the Global execu
 Stack Manage the Creation, deletion and control of execution context
 It has its own call stack
 
-Evertime in our call stack we have global execution context in bottom of the stack
+Everytime in our call stack we have global execution context in bottom of the stack
 
 
 

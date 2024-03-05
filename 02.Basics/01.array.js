@@ -39,7 +39,7 @@ console.log(another_arr.reverse());
 
 
 // console.log(Array.isArray('Suraj'))//false
-// console.log(Array.isArray(['Suraj']))//false
+// console.log(Array.isArray(['Suraj']))//true
 console.log(Array.from('Suraj'))//['S','u','r','a','j']
 // console.log(Array.from({name:'Suraj'}))//Interesting. It will return an empty array because it did not know whow to make array key or value
 let score1 = 100;
