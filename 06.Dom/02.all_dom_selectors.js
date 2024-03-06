@@ -66,7 +66,7 @@ tempLiList.length;
 
 
 
-// getElementByClassName()  : It will give you all element which have pass as a parameter
+// getElementByClassName()  : It will give you all element which has pass as a parameter
 
 
 // It will give HTMLCollection. NOte: We cannot apply forEach on HTMLCollection

@@ -108,9 +108,9 @@ Things learned:
     2.'typeof' operator:
                   1.It is used to identify the type of a specific value or argument.
                   2.It returns a string indicating the type of the operand.
-                  3.Javascripot supports two forms syntax of it:
+                  3.Javascript supports two forms syntax of it:
                         a.operator: typeof x
-                        b.fucntion: typeof(x);
+                        b.function: typeof(x);
     3.The number type represent numeric data, including integers and floating-point numbers.It also support special numeric values such as infinity and NaN.
                   Ex: let myInt = 45;   console.log(typeof myInt) //number
                       let myInt2 = 411.2; console.log(typeof myInt2) //number
@@ -199,7 +199,7 @@ let b = function () {
 // function (){
 
 // }
-//Anonymous function like this will result out a syntax error fucntion statement require a name
+//Anonymous function like this will result out a syntax error function statement require a name
 // use of anonymous fucntion --> It used in a place where function are used as values
 
 
@@ -1225,7 +1225,7 @@ let obj = {
 
 // obj.myFunc()
 
-// We again get the window object. So, we can see that the value of this depends on how and where are we doing the calling.
+// We again get the window object. So, we can see that the value of this depends on how and where are we doing the call.
 
 // What we just did above is called Implicit Binding. The value of this got bound to the object.
 

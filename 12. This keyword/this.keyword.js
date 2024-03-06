@@ -37,7 +37,7 @@ window.x() // window object in strict mode
 const obj = {
     a: 10,
     x: function () {
-        console.log(this.a); //here, the value of this keyword is object where that method is present
+        console.log(this.a); //here, the value of this keyword is that object where that method is present
     }
 }
 // Here, x is an method of obj object
