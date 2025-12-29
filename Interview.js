@@ -962,6 +962,7 @@ const p1 = new Promise((resolve, reject) => {
     // }, 3000);
     setTimeout(() => {
         reject('P1 Failed')
+        console.log("P1 Failed")
     }, 3000);
 })
 const p2 = new Promise((resolve, reject) => {
@@ -992,7 +993,7 @@ Promise.any([p1, p2, p3]).then((res) => {
 // NOTE: Settled means whether a promise will be 
 // resolve or reject
 // success or failure
-//fullfilled or rejected
+// fullfilled or rejected
 // To get the aggregate error we need to do console.log(err.errors) in catch
 
 
@@ -1000,6 +1001,41 @@ Promise.any([p1, p2, p3]).then((res) => {
 
 
 
+/*
+
+1. In Va Structure
+    Add one toggle 'Is Authentication required'
+    if toggle is enabled then show three checkbox or toggle 
+        1. VA Creation
+        2. Refund
+        3. Parking
+
+2. While creating VA, 
+    1. After uploading the file and clicking on submit then the VA will go to another user for approval/reject
+    2. After approving the file, VA will be created
+    3. We can approve/reject the VA by selecting multiple VA or individually also
+    4. Only same person can edit
+
+DB Changes:
+    1. CONFIG_MASTER
+    2. VA_MASTER
+    3. VA_MASTER_LOG - VA Report Data
+
+API Changes
+    1. VA Bulkupload - Existing API
+    2. Corp Checker - Existing API
+    3. VA Report API - New API
+
+3. We need to add one more screen for Pending items which show the requests to create Virtual accounts
+4. Aditional screen - Report for VA Approval/Rejection - This screen show the status of VA creation (who created, who approved)
+
+
+
+
+
+
+
+*/
 
 
 
@@ -1277,9 +1313,9 @@ const obj2 = {
     name: "shiv"
 }
 
-obj2.__proto__ = obj1
+obj2.__proto__.shiv = obj1
 
-
+console.log("123123132213",obj2.shiv)
 
 // console.log(obj2.city);
 

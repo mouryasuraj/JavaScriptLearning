@@ -80,7 +80,7 @@ let obj = {
 }
 const {name, age} = obj; //This is called Object Destructutring
 const {name:Name, age:Age} = obj; //we can also change the keys name using the given method name:Name
-// console.table([Name, Age]);
+console.table([Name, Age]);
 
 // JSON API
 // {
@@ -92,6 +92,8 @@ const {name:Name, age:Age} = obj; //we can also change the keys name using the g
 // [
 //     {},{},{}
 // ] //Another way of API
+
+
 
 
 
