@@ -11,7 +11,7 @@
 
 //falsy value
 
-// false, 0, -0, BigInt On, "",  null, undefined, NaN
+// false, 0, -0, BigInt 0n, "",  null, undefined, NaN
 
 
 // truthy value

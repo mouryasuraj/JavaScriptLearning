@@ -25,27 +25,27 @@
 // console.log(showResult());//return NaN: beacuse It has no arguments
 // console.log(showResult(4,5)); //return 9
 
-// function loggedIN(username){
-//     return `${username} just logged in`
-// }
-// function loggedIN(username){
-//     if(username === undefined){
-//         return 'Please enter the username';
-//     }
-//     return `${username} just logged in`
-// }
+function loggedIN(username){
+    return `${username} just logged in`
+}
+function loggedIN(username){
+    if(username === undefined){
+        return 'Please enter the username';
+    }
+    return `${username} just logged in`
+}
 
-// console.log(loggedIN('suraj'));
+console.log(loggedIN('suraj'));
 
 // we can pass the default parameter value username = 'User beacuse when argument is not passed then it will use default value. If we pass the argument then default value will override by argumemt
-// function loggedIN(username = "User"){
-//     if(!username){
-//         return 'Please enter the username';
-//     }
-//     return `${username} just logged in`
-// }
-// console.log(loggedIN());//Return UNdefined just logged in beacuse we didn't pass any argument
-// console.log(loggedIN('Suraj'));//Return Suraj just logged in beacuse we pass the argument
+function loggedIN(username = "User"){
+    if(!username){
+        return 'Please enter the username';
+    }
+    return `${username} just logged in`
+}
+console.log(loggedIN());//Return User just logged in beacuse we didn't pass any argument
+console.log(loggedIN('Suraj'));//Return Suraj just logged in beacuse we pass the argument
 
 
 // function calculateCartPrice(num1){
@@ -56,7 +56,7 @@
 // function calculateCartPrice(num1){
 //     return num1
 // }
-// console.log(calculateCartPrice(2, 500, 300, 400));//return 2 beacuse it will take only first argument to fix this bug we use rest operator(...num1) and rest opoerator return an array
+// console.log(calculateCartPrice(2, 500, 300, 400));//return 2 beacuse it will take only first argument. to fix this bug we use rest operator(...num1) and rest opoerator return an array
 
 // function calculateCartPrice(value1, value2, ...num1){ //value1=2, value2=500, ...num1 = [300,400];
 //     return num1

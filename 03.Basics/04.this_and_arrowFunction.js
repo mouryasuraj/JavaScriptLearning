@@ -34,7 +34,7 @@
 // const chai = function(){
 //     let username = 'suraj'
 //     // console.log(this.username);//undefined
-//     console.log(this);//undefined
+//     console.log(this);// object
 // }
 // chai();
 
@@ -70,7 +70,7 @@
 
 // console.log(addTwo(3,4));
 
-// if we want to put object in arrow function then we have wrap object in parathesis
+// if we want to put object in arrow function then we have to wrap object in parathesis
 // const show = () =>{username:'suraj'}//undefined
 // const show = () =>({username:'suraj'})//username:'suraj'
 // console.log(show());
@@ -82,20 +82,20 @@
 
 // this example
 
-// function getThis() {
-//     console.log(this);
-//   }
+function getThis() {
+    console.log(this);
+  }
   
-// const obj1 = { 
-//     name: "obj1" ,
-//     getThis : getThis
-// };
-//   const obj2 = { name: "obj2" };
+const obj1 = { 
+    name: "obj1" ,
+    getThis : getThis
+};
+  const obj2 = { name: "obj2" };
   
-//   obj2.getThis = getThis;
+  obj2.getThis = getThis;
   
-//   console.log(obj1.getThis()); // { name: 'obj1', getThis: [Function: getThis] }
-//   console.log(obj2.getThis()); // { name: 'obj2', getThis: [Function: getThis] }
+  console.log(obj1.getThis()); // { name: 'obj1', getThis: [Function: getThis] }
+  console.log(obj2.getThis()); // { name: 'obj2', getThis: [Function: getThis] }
 
 
 
