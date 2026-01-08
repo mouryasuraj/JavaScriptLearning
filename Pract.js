@@ -135,3 +135,173 @@ switch(CourseName){
 8 On (Big O n) - BigInt
 
 */
+
+
+// For Loop
+
+// for(let i=1; i<=100; i++){
+//     for(let j=1; j<=10; j++){
+//         console.log(`${i} * ${j} = ${i * j}`)
+//     }
+//     console.log("End---------------")
+// }
+
+// const num = [1,2,3,4,5,6,7,8,9,10];
+// const len = num.length
+
+// for (let i = 0; i < len; i++) {
+//     num.pop();
+// }
+// console.log(num);
+
+
+
+// const arr = [45,28,56,78,91,56]
+
+// let i = 0
+// // While loop
+// while(arr[i]<40){
+//     console.log(arr[i])
+//     i++;
+// }
+
+
+// let i=0
+// do{
+//     console.log("I'll run atleast one time")
+//     i++
+// }while(i<10)
+
+
+// const name = "Suraj Mourya"
+// for(const n of name){
+//     if(n===" "){
+//         continue;
+//     }
+//     console.log(n)
+// }
+
+// const arr = ["Suraj",45,78]
+// for(const n of arr){
+//     console.log(arr[n])
+// }
+// const set = new Set()
+// set.add("Suraj")
+// set.add("Suraj")
+// set.add("Mourya")
+// set.add("Mourya")
+// set.add(45)
+// console.log(set)
+
+// for(const n of set){
+//     console.log("sd",n)
+// }
+
+
+// const map = new Map()
+// map.set("name","suraj")
+// map.set("lastnam","mourya")
+// map.set("age",45)
+// map.set("marital status","unmarried")
+
+// for(const [key,value] of map){
+//     console.log(key, value)
+// }
+
+
+// const obj = {
+//     name:"suraj",
+//     age:45
+// }
+
+// for(const n in obj){
+//     console.log(n, obj[n])
+// }
+
+
+// for each
+
+// const codingLan = ["JS","Java","C++","Python"]
+// codingLan.forEach((val, index, arr)=>{
+//     console.log(val, index,arr)
+// })
+
+// function printMe(val){
+//     console.log(val)
+// }
+
+// codingLan.forEach(printMe)
+
+
+//Filter
+// const arr = [45,78,12,65,24,34,75,61]
+
+// const newArr = arr.filter(val => val<50)
+// console.log(newArr)
+
+// // Removing falsy values from an array
+// const values = [0, 1, false, 2, "h", 3];
+
+// const truthyValues = values.filter(Boolean)
+// console.log(truthyValues)
+
+
+
+// Map
+// const values = [0, 1, 2,3,4,5,6];
+// const newArr = values.map(()=>{
+
+// })
+
+// Reduce
+
+// const values = [0, 1, 2,3,4,5,6];
+// const newArr = values.reduce((acc, curr)=>{
+//     return acc + curr
+// },0)
+// console.log(newArr)
+
+
+// window.onload = ()=>{
+//     const heading = document.createElement("h1")
+//     const text = document.createTextNode("This heading is generated through Javascript")
+//     heading.appendChild(text)
+//     document.body.appendChild(heading)
+// }
+
+
+// const prints = document.getElementById("print")
+// console.log(prints.setAttribute('class','redColor'))
+
+
+
+// const createElements =(elem, id, clas, width, height, text, bgclr, clr)=>{
+//     const div = document.createElement(elem)
+//     div.className = clas;
+//     div.id = id;
+//     div.setAttribute('title', 'Main-box');
+//     const textNode = document.createTextNode(text)
+//     div.appendChild(textNode);
+//     div.style.backgroundColor = bgclr;
+//     div.style.color = clr;
+//     div.style.padding = '10px';
+//     div.style.width = width;
+//     div.style.height = height;
+//     div.style.display = 'flex';
+//     div.style.alignItems = 'center';
+//     div.style.justifyContent = 'center';
+//     div.style.margin = '20px auto';
+//     document.body.appendChild(div)
+// // }
+
+// createElements('h1','heading','head','fit-content','fit-content', 'Heading', 'skyblue', 'black');
+// createElements('p','firstPara','para','300px','fit-content', 'This is the first para created through javaScript', 'red', 'skyblue');
+// createElements('div','main-box','main','500px','300px', 'Main-box', 'cyan', 'red');
+
+
+
+function showName(name, age){
+    console.log(name, age)
+}
+const id = setTimeout(showName, 2000, "Suraj", 25)
+console.log(id)
