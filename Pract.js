@@ -300,8 +300,72 @@ switch(CourseName){
 
 
 
-function showName(name, age){
-    console.log(name, age)
+// function showName(name, age){
+//     console.log(name, age)
+// }
+// const id = setTimeout(showName, 2000, "Suraj", 25)
+// console.log(id)
+
+
+
+const apiUrl = "https://dummyjson.com/products/1"
+
+const promise = new Promise(async function(resolve, reject){
+    try {
+        const response = await fetch(apiUrl)
+        const json = await response.json()
+        resolve(json)
+    } catch (error) {
+        reject({message:"Something went wrong"})
+    }
+    
+})
+
+
+
+promise.then((data)=>{
+    // console.log(data)
+}).catch(error=>{
+    console.log(error.message)
+})
+
+
+class Chai {
+    
+    name = "Suraj"
+
+    getChai(){
+        console.log("Getting the chai....")
+    }
+
+    makeMasalaChai(){
+        console.log("Making the masala chai.....")
+    }
 }
-const id = setTimeout(showName, 2000, "Suraj", 25)
-console.log(id)
+
+const chai1 = new Chai()
+// console.log(chai1.getChai())
+// console.log(chai1.makeMasalaChai())
+
+
+
+// OOPS
+function getData(){
+    console.log("Surja mourya")
+}
+getData.name = "SHiv"
+// console.log(getData.name)
+// console.log(getData.prototype)
+
+
+class User {
+    static getUser(){
+        console.log("Getting user from database")
+    }
+
+}
+
+class Teacher extends User{
+    static a = super.getUser()
+}
+console.log(User.getUser())

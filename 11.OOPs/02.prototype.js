@@ -94,7 +94,7 @@ const staff = {
 
 
 
-// MOder Syntax
+// MOdern Syntax
 Object.setPrototypeOf(teacher, user)
 // console.log(teacher.username);
 
