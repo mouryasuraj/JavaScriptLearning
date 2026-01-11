@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 
 // 'this' keyword in js
 
@@ -6,7 +6,7 @@
 
 // ------------'this' in global space----------------
 
-// console.log(this)  //globalObject
+console.log(this)  //globalObject
 // 1. 'this' keyword in global space will always have the value of global object
 // 2. javascript can run on browser, nodejs, mobile etc.
 // 3. global object for 'this' is different in different scenarios
@@ -16,7 +16,7 @@
 
 // ------------'this' inside a function ----------------
 function x() {
-    console.log(this); //value of this will be depends on stric mode and non strict mode
+    console.log("asd",this); //value of this will be depends on stric mode and non strict mode
 }
 x()
 // 1. the value of 'this' depends on strict and non-strict mode
@@ -29,7 +29,7 @@ x()
 // ------------'this' keyword depends on how 'this' is called(window)----------------
 
 x() // undefined in strict mode
-window.x() // window object in strict mode
+// window.x() // window object in strict mode
 
 
 // ------------'this' keyword inside a object's method----------------
