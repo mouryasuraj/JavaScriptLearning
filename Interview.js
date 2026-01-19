@@ -1304,18 +1304,18 @@ let arr = ['Rajat', 'Raj']
 // prototyes inheritance
 // This is prototypal inhritance 
 
-const obj1 = {
-    name: "suraj",
-    city: "mumbai"
-}
+// const obj1 = {
+//     name: "suraj",
+//     city: "mumbai"
+// }
 
-const obj2 = {
-    name: "shiv"
-}
+// const obj2 = {
+//     name: "shiv"
+// }
 
-obj2.__proto__.shiv = obj1
+// obj2.__proto__.shiv = obj1
 
-console.log("123123132213",obj2.shiv)
+// console.log("123123132213",obj2.shiv)
 
 // console.log(obj2.city);
 
@@ -1325,5 +1325,19 @@ console.log("123123132213",obj2.shiv)
 //         console.log(i);
 //     }, i * 1000);
 // }
+
+
+
+// Filter definition - filter() creates a new array with elements that pass the test implemented by the provided function.
+// ✔ Returns new array
+// ✔ Original array unchanged
+// ✔ Callback must return boolean
+// ✔ Can be chained with map() and reduce()
+
+// Map - Map() method iterates over an array, applies transformation to each element and return a new array without modifying the original array
+// ✔ map() modifies data logically, not the original array
+// ✔ Returns a new array
+// ✔ Length of new array = length of original array
+// ✔ Used for data transformation, not filtering
 
 
