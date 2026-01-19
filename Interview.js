@@ -73,7 +73,7 @@ Things learned:
     1.Hoisting in javascript is a behaviour where variable and function declarations are moved to the top of their scope during the compilation phase, before the code is executed. This means that we can used variables and funcions before they are declared in the scope.
     2.Two main aspects of hoisting:
         1.Variable hoisting:
-            a.When a variable is declared with var, the declaration is hoisted to the top of the scope, but the assignmemt remains in place
+            a.When a variable is declared with var, the declaration is hoisted to the top of the scope, but the assignmemt remains in place.
             b.Ex: console.log(x);  //undefined
                   var x = 5;
                   console.log(x); // 5
@@ -192,7 +192,7 @@ let b = function () {
 
 
 // Difference between function statement and function expression is hoisting
-// when we call b() before its declaration the we will get TypeError: b is not a function because during hoisting phase or memory creation phase a() store the its function and b() stored undefined
+// when we call b() before its declaration then we will get TypeError: b is not a function because during hoisting phase or memory creation phase a() store the its function and b() stored undefined
 
 // Anonymous function ---> A function without a name is known as Anonymous function
 // Ex:

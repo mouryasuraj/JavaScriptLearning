@@ -98,4 +98,17 @@ NUmbers
     GPT - toPrecision() returns a number as a string with a specified total number of significant digits.
 It may return the result in normal or exponential notation, depending on the value and the precision.
 
+
+Null and Undefined
+undefined is automatically assigned by JavaScript when a variable is declared but not initialized, whereas null is explicitly assigned to represent an intentional absence of value.
+
+
+// Functions in JS are first-class Citizens, 
+// what does that mean? 
+// What is the difference between Function Statements and Function Expressions? 
+// What are Anonymous Functions? 
+// What are First Class Functions? and What is first class Citizens
+// What is the difference between Function Parameter and Function Arguments?
+
+
 */

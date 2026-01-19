@@ -1,15 +1,15 @@
 // // https://chatgpt.com/c/695ea67f-01f8-8320-aa9d-9db52798f4f0
 
-let date = new Date();
-console.log(date.toString());
-console.log(date.toDateString());
-console.log(date.toLocaleString());
-console.log(date.toISOString());
-console.log(date.toJSON());
-console.log(date.toLocaleDateString());
-console.log(date.toLocaleTimeString());
-console.log(date.toTimeString());
-console.log(date.toUTCString());
+// let date = new Date();
+// console.log(date.toString());
+// console.log(date.toDateString());
+// console.log(date.toLocaleString());
+// console.log(date.toISOString());
+// console.log(date.toJSON());
+// console.log(date.toLocaleDateString());
+// console.log(date.toLocaleTimeString());
+// console.log(date.toTimeString());
+// console.log(date.toUTCString());
 // const arr = ["Suraj", 45, true]   
 // arr.push("Swati") // ["Suraj", 45, true, "Swati"] 
 // arr.pop() // ["Suraj", 45, true] 
@@ -396,12 +396,35 @@ switch(CourseName){
 // obj.a()
 
 
-const obj = {
-    name:"Suraj Mourya",
-    age:56,
-    t:function(){
-        console.log(this.name)
-    }
+// const obj = {
+//     name:"Suraj Mourya",
+//     age:56,
+//     t:function(){
+//         console.log(this.name)
+//     }
+// }
+
+// setTimeout(obj.t.bind(obj), 1000);
+
+
+
+
+// Function Declaration
+function a(){
+    console.log("Hello, THis is how function declaration define")
 }
 
-setTimeout(obj.t.bind(obj), 1000);
+// Function Expression
+const func = function(){
+    console.log("This is function expression, if we assigned funcation as a value or used as a value then it become function expression")
+}
+
+const b = function xyz(){
+    console.log(xyz)
+}
+
+console.log(b())
+
+setTimeout(function(){
+    console.log("Timmming")
+}, 1000);
