@@ -91,8 +91,8 @@ console.log(str.concat(", ", anotherStr));
 // console.log(anotherStr.endsWith('Programmer.', 16));// true
 // console.log(anotherStr.endsWith('Programmer')); //false
 
-// console.log(String.fromCharCode(189, 66, 67, 68));
-// console.log(String.fromCodePoint(205, 66, 67, 68));
+// console.log(String.fromCharCode(189, 66, 67, 68));  //old - Limited range
+// console.log(String.fromCodePoint(205, 66, 67, 68)); // new - Long range
 
 // console.log(`The first name ${str.substring(0, 6)}${str.includes('Suraj') ? 'is' : 'is not'} present in the given sentence`);
 // const str = "To be, or not to be, that is the question.";
