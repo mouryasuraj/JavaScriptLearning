@@ -410,21 +410,38 @@ switch(CourseName){
 
 
 // Function Declaration
-function a(){
-    console.log("Hello, THis is how function declaration define")
+// function a(){
+//     console.log("Hello, THis is how function declaration define")
+// }
+
+// // Function Expression
+// const func = function(){
+//     console.log("This is function expression, if we assigned funcation as a value or used as a value then it become function expression")
+// }
+
+// const b = function xyz(){
+//     console.log(xyz)
+// }
+
+// console.log(b())
+
+// setTimeout(function(){
+//     console.log("Timmming")
+// }, 1000);
+
+
+console.log('Start');
+
+setTimeout(() => {
+    console.log('call back');
+}, 5000);
+
+
+let startDate = new Date().getTime()
+let endDate = startDate
+while(endDate < startDate + 10000){
+    console.log("I'm running")
+    endDate = new Date().getTime()
 }
 
-// Function Expression
-const func = function(){
-    console.log("This is function expression, if we assigned funcation as a value or used as a value then it become function expression")
-}
-
-const b = function xyz(){
-    console.log(xyz)
-}
-
-console.log(b())
-
-setTimeout(function(){
-    console.log("Timmming")
-}, 1000);
+console.log('End');

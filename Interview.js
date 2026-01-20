@@ -273,6 +273,8 @@ r(function () {
 1.If we need to execute any piece of javscript code we need javscript run time environment
 2.In the browser, we have javsScript environment and in this js runtime environment we have js engine, web api's, task queue, microtask queue, event loop and other API's. Basically, js runtime is not possible without js engine. So, js engine is like heart of js run time environment.
 
+https://dev.to/rahmanmajeed/javascript-the-runtime-environment-35a2
+
 Js engine :https://en.wikipedia.org/wiki/JavaScript_engine
 First js engine was spidermonkey which is implemented in firefox and created by Brendan Eich(created javscript)
 
