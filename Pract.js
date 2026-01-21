@@ -430,18 +430,103 @@ switch(CourseName){
 // }, 1000);
 
 
-console.log('Start');
+// console.log('Start');
 
-setTimeout(() => {
-    console.log('call back');
-}, 5000);
+// setTimeout(() => {
+//     console.log('call back');
+// }, 5000);
 
 
-let startDate = new Date().getTime()
-let endDate = startDate
-while(endDate < startDate + 10000){
-    console.log("I'm running")
-    endDate = new Date().getTime()
+// let startDate = new Date().getTime()
+// let endDate = startDate
+// while(endDate < startDate + 10000){
+//     console.log("I'm running")
+//     endDate = new Date().getTime()
+// }
+
+// console.log('End');
+
+
+function getSum(numbers){
+    let sum = 0;
+    for(let i=0; i<numbers.length; i++){
+        sum = sum + numbers[i]
+    }
+    return sum
 }
 
-console.log('End');
+Array.prototype.getSum = getSum
+
+const numbers = [1,2,3,4,5,6,7,8,9,10]
+// console.log(Array.prototype.getSum(numbers))
+
+const user1 = [
+    { firstName: 'Suraj', lastName: 'Mourya', age: 26 },
+    { firstName: 'Vipin', lastName: 'Yadav', age: 45 },
+    { firstName: 'Vishal', lastName: 'Gupta', age: 25 },
+    { firstName: 'Suresh', lastName: 'Raina', age: 56 },
+    { firstName: 'Vipin', lastName: 'Yadav', age: 22 },
+    { firstName: 'Vipin', lastName: 'Yadav', age: 22 },
+    { firstName: 'Vishal', lastName: 'Gupta', age: 26 },
+    { firstName: 'Suresh', lastName: 'Raina', age: 46 },
+    { firstName: 'Suresh', lastName: 'Raina', age: 46 },
+]
+
+
+
+//  get the user age count
+const result = user1.reduce((user, curr)=>{
+    if(user[curr.age]){
+        user[curr.age] = user[curr.age]+1
+    }else{
+        user[curr.age] = 1
+    }
+    return user
+},{})
+// console.log(result)
+
+
+// Filter user whose age in less than 30 using reduce
+const result1 = user1.reduce((user, curr)=>{
+    if(curr.age<30){
+        user.push(curr.firstName)
+    }
+    return user
+},[])
+// console.log(result1)
+
+
+
+
+// Promised in JS
+
+const isOrderValidated = (orderId) =>{
+    if(orderId){
+        return true
+    }else{
+        return false
+    }
+}
+
+
+const createOrder = (orderId) =>{
+    const pr = new Promise((resolve, reject)=>{
+        if(!isOrderValidated(orderId)){
+            reject("Order id is not validated")
+        }
+
+        if(orderId){
+            resolve("Order is created")
+        }
+    })
+    return pr
+}
+
+
+const promise = createOrder("df")
+promise.then((data)=>{
+    console.log(data)
+})
+.catch((err)=>{
+    console.log(err)
+})
