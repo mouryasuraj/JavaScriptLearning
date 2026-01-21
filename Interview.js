@@ -1003,48 +1003,6 @@ Promise.any([p1, p2, p3]).then((res) => {
 
 
 
-/*
-
-1. In Va Structure
-    Add one toggle 'Is Authentication required'
-    if toggle is enabled then show three checkbox or toggle 
-        1. VA Creation
-        2. Refund
-        3. Parking
-
-2. While creating VA, 
-    1. After uploading the file and clicking on submit then the VA will go to another user for approval/reject
-    2. After approving the file, VA will be created
-    3. We can approve/reject the VA by selecting multiple VA or individually also
-    4. Only same person can edit
-
-DB Changes:
-    1. CONFIG_MASTER
-    2. VA_MASTER
-    3. VA_MASTER_LOG - VA Report Data
-
-API Changes
-    1. VA Bulkupload - Existing API
-    2. Corp Checker - Existing API
-    3. VA Report API - New API
-
-3. We need to add one more screen for Pending items which show the requests to create Virtual accounts
-4. Aditional screen - Report for VA Approval/Rejection - This screen show the status of VA creation (who created, who approved)
-
-
-
-
-
-
-
-*/
-
-
-
-
-
-
-
 
 
 

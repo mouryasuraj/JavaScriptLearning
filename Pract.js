@@ -523,10 +523,79 @@ const createOrder = (orderId) =>{
 }
 
 
-const promise = createOrder("df")
-promise.then((data)=>{
-    console.log(data)
-})
-.catch((err)=>{
-    console.log(err)
-})
+// const promise = createOrder("df")
+// promise.then((data)=>{
+//     console.log(data)
+// })
+// .catch((err)=>{
+//     console.log(err)
+// })
+
+
+
+
+// Chaniing method
+
+const createOrder1 = (orderId) =>{
+    const pr = new Promise((resolve, reject)=>{
+        if(!isOrderValidated(orderId)){
+            let err = new Error("Order id is not validated")
+            reject(err)
+        }
+
+        if(orderId){
+            console.log("Order is created")
+            resolve(orderId)
+        }
+    })
+    return pr
+}
+
+const proceedToPayment = (orderId) =>{
+    console.log("Payment is completed", orderId)
+    return orderId
+}
+
+const updateWallet = (orderId) =>{
+    console.log("Updated wallet")
+    return orderId
+}
+
+const orderConfirmation = () =>{
+    console.log("Your order has been successfully completed")
+}
+
+// Chaining method
+// createOrder1("789")
+// .then(proceedToPayment)
+// .catch(err=>{
+//     console.log("Error catching",err)
+// })
+// .then(updateWallet)
+// .then(orderConfirmation)
+// .catch(err =>{
+//     console.log("last error",err)
+// })
+
+
+
+
+// async await
+
+// async function getData(){
+//     return "Async Promise"
+// }
+// const data1 = getData();
+// data1.then(res => console.log(res))
+
+
+//Closures
+
+const func1 = () =>{
+    let a = 45;
+    const func2 = ()=>{
+        console.log(a)
+    }
+    return func2
+}
+const newFunc = func1()
